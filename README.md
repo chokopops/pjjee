@@ -2,25 +2,56 @@
 
 SQL Code :
 DROP TABLE VISITE;
+DROP TABLE TUTOR;
+DROP TABLE STUDENT;
+DROP TABLE STAGE;
+DROP TABLE DOC;
+DROP TABLE ENTREPRISE;
 
-CREATE TABLE "VISITE" ("ID" INTEGER NOT NULL AUTO_INCREMENT,
-                      "GR" VARCHAR(2) NOT NULL,
-                      "NOM" VARCHAR(25),
-                      "CDC" BOOLEAN,
-                      "FICHE" BOOLEAN,
-                      "FICHEEVAL" BOOLEAN,
-                      "SONDAGE" BOOLEAN,
-                      "RAPPORT" BOOLEAN,
-                      "SOUT" BOOLEAN,
+CREATE TABLE "VISITE" ("ID_VISITE" INTEGER NOT NULL AUTO_INCREMENT,
+                      "FICHE_VISITE" BOOLEAN,
                       "PLANNIF" BOOLEAN,
                       "FAITE" BOOLEAN,
+                       CONSTRAINT PK_VISITE PRIMARY KEY (ID_VISITE)
+                      ); //INSERT INTO VISITE(FICHE_VISITE,PLANNIF,FAITE);
+
+CREATE TABLE "TUTOR" ("ID_TUTOR" INTEGER NOT NULL AUTO_INCREMENT,
+                        "FIRSTNAME_PROF" VARCHAR(25),
+                        "LASTNAME_PROF" VARCHAR(255),
+                        "LOGIN_PROF" VARCHAR(255),
+                        "PWD_PROF" VARCHAR(255),
+                      CONSTRAINT PK_TUTOR PRIMARY KEY (ID_TUTOR)
+                        ); //INSERT INTO TUTOR(FIRSTNAME_PROF,LASTNAME_PROF,LOGIN_PROF, PWD_PROF);
+
+CREATE TABLE "STUDENT" ("ID_STUDENT" INTEGER NOT NULL AUTO_INCREMENT,
+                        "FIRSTNAME_STUDENT" VARCHAR(25),
+                        "LASTNAME_STUDENT" VARCHAR(25),
+                        "GROUP" VARCHAR(10),
+                        CONSTRAINT PK_STUDENT PRIMARY KEY (ID_STUDENT)
+                       ); //INSERT INTO STUDENT(FIRSTNAME_STUDENT,LASTNAME_STUDENT, GROUP);
+
+CREATE TABLE "DOC" ("ID_DOC" INTEGER NOT NULL AUTO_INCREMENT,
+                    "CDC" BOOLEAN,
+                    "FICHE_EVAL" BOOLEAN,
+                    "SONDAGE" BOOLEAN,
+                    "RAPPORT" BOOLEAN,
+                    "SOUTENANCE" BOOLEAN,
+                    CONSTRAINT PK_DOC PRIMARY KEY (ID_DOC)
+                    ); //INSERT INTO DOC(CDC, FICHE_EVAL, SONDAGE, RAPPORT, SOUTENANCE);
+
+CREATE TABLE "STAGE" ("ID_STAGE" INTEGER NOT NULL AUTO_INCREMENT,
                       "DEBUT" DATETIME,
                       "FIN" DATETIME,
-                      "ENTR" VARCHAR(10),
                       "MDS" VARCHAR(10),
-                      "ADRESSE" VARCHAR(60),
+                      "ID_ENTERPRISE" INTEGER,
                       "NOTE_TECH" INTEGER,
                       "NOTE_COM" INTEGER,
-                       CONSTRAINT INTEGER PRIMARY KEY (ID)
-                      ); //INSERT INTO VISITE(GR,NOM,CDC,FICHE,FICHEEVAL,SONDAGE,RAPPORT,SOUT,PLANIF,FAITE,DEBUT,FIN,ENTR,ADRESSE,NOTE_TECH,NOTE_COM);
+                    CONSTRAINT FK_ENTREPRISE FOREIGN KEY (ID_ENTERPRISE) REFERENCES ENTREPRISE(ID_ENTREPRISE),
+                    CONSTRAINT PK_STAGE PRIMARY KEY (ID_STAGE)
+                    ); //INSERT INTO STAGE(DEBUT, FIN, SONDAGE, MDS, NOTE_TECH, NOTE_COM);
 
+CREATE TABLE "ENTREPRISE" ("ID_ENTREPRISE" INTEGER NOT NULL AUTO_INCREMENT,
+                      "NAME_ENTREPRISE" VARCHAR(10),
+                      "ADRESSE" VARCHAR(60),
+                      CONSTRAINT PK_ENTREPRISE PRIMARY KEY (ID_ENTREPRISE)
+                    ); //INSERT INTO ENTREPRISE(NAME_ENTREPRISE, ADRESSE);
