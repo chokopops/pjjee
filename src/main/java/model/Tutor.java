@@ -1,16 +1,24 @@
 package model;
 
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
 public class Tutor
 {
+    private final int idTutor;
     private String login;
     private String pwd;
     private String firstName;
-    private  String lastName;
+    private String lastName;
+    private static int compteurId;
 
-
-
-
-
+    public Tutor(String login, String pwd, String firstName, String lastName){
+        this.idTutor = compteurId;
+        this.login = login;
+        this.pwd = pwd;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        compteurId++;
+    }
 
     /// GETTER AND SETTER ///
 
@@ -25,6 +33,10 @@ public class Tutor
 
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public int getIdTutor() {
+        return idTutor;
+    }
 
     /// GETTER AND SETTER ///
 }
