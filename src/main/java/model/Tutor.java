@@ -10,6 +10,10 @@ public class Tutor
 
 
 
+
+
+    /// GETTER AND SETTER ///
+
     public String getLogin() { return login; }
     public void setLogin(String login) { this.login = login; }
 
@@ -21,4 +25,6 @@ public class Tutor
 
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
+
+    /// GETTER AND SETTER ///
 }
