@@ -176,53 +176,53 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_2057E219_CB86_4255_B6F2_3AE63955A979">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_167B61BB_1E15_4037_A1A1_73D60FB56DBA">
       <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_37206A7B_46CF_4724_BBCE_F37AA9E7867A">
-      <ObjectId>16</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CacheSize>32</CacheSize>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_83B84248_C607_4113_9AD2_34F5E8E896A6">
-      <ObjectId>12</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CacheSize>32</CacheSize>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="167" parent="4" name="SYSTEM_SEQUENCE_8ECC65BE_42E4_420B_8650_C60AB5CF8247">
-      <ObjectId>20</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CacheSize>32</CacheSize>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="168" parent="4" name="SYSTEM_SEQUENCE_F10FAE3A_6736_4752_B00B_83276F5DB192">
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_43C1935C_F80C_4F4D_9285_22573A9F5C33">
       <ObjectId>24</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="169" parent="4" name="SYSTEM_SEQUENCE_F6C8D07F_F6C4_4622_94EA_629EA9EFA689">
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_4DB16637_A764_40AB_B94A_C88C207F3FCE">
       <ObjectId>8</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
+    <sequence id="167" parent="4" name="SYSTEM_SEQUENCE_B8C2DCC8_BF88_4238_BC1E_343E214AA277">
+      <ObjectId>12</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CacheSize>32</CacheSize>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="168" parent="4" name="SYSTEM_SEQUENCE_C7517C82_1780_447F_85F5_6165630AA512">
+      <ObjectId>16</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CacheSize>32</CacheSize>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="169" parent="4" name="SYSTEM_SEQUENCE_EE5830FB_C046_4168_934A_318EFB4236AE">
+      <ObjectId>28</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CacheSize>32</CacheSize>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
     <table id="170" parent="4" name="DOC">
-      <ObjectId>15</ObjectId>
+      <ObjectId>11</ObjectId>
     </table>
     <table id="171" parent="4" name="ENTREPRISE">
-      <ObjectId>19</ObjectId>
-    </table>
-    <table id="172" parent="4" name="STAGE">
       <ObjectId>23</ObjectId>
     </table>
+    <table id="172" parent="4" name="STAGE">
+      <ObjectId>27</ObjectId>
+    </table>
     <table id="173" parent="4" name="STUDENT">
-      <ObjectId>11</ObjectId>
+      <ObjectId>15</ObjectId>
     </table>
     <table id="174" parent="4" name="TUTOR">
       <ObjectId>7</ObjectId>
@@ -257,7 +257,7 @@
       <DataType>BOOLEAN|0s</DataType>
     </column>
     <index id="182" parent="170" name="PRIMARY_KEY_1">
-      <ObjectId>17</ObjectId>
+      <ObjectId>13</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>71</SourceTextLength>
       <ColNames>ID_DOC</ColNames>
@@ -283,7 +283,7 @@
       <DataType>VARCHAR(60)|0s</DataType>
     </column>
     <index id="187" parent="171" name="PRIMARY_KEY_8">
-      <ObjectId>21</ObjectId>
+      <ObjectId>25</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>85</SourceTextLength>
       <ColNames>ID_ENTREPRISE</ColNames>
@@ -312,38 +312,49 @@
       <Position>4</Position>
       <DataType>VARCHAR(10)|0s</DataType>
     </column>
-    <column id="193" parent="172" name="ID_ENTERPRISE">
+    <column id="193" parent="172" name="NOTE_TECH">
       <Position>5</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="194" parent="172" name="NOTE_TECH">
+    <column id="194" parent="172" name="NOTE_COM">
       <Position>6</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="195" parent="172" name="NOTE_COM">
+    <column id="195" parent="172" name="ID_ENTERPRISE">
       <Position>7</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <index id="196" parent="172" name="PRIMARY_KEY_4B">
-      <ObjectId>27</ObjectId>
+    <column id="196" parent="172" name="ID_STUDENT">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="197" parent="172" name="PRIMARY_KEY_4B">
+      <ObjectId>33</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>76</SourceTextLength>
       <ColNames>ID_STAGE</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="197" parent="172" name="FK_ENTREPRISE_INDEX_4">
-      <ObjectId>25</ObjectId>
+    <index id="198" parent="172" name="FK_ENTREPRISE_INDEX_4">
+      <ObjectId>31</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>82</SourceTextLength>
       <ColNames>ID_ENTERPRISE</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="198" parent="172" name="PK_STAGE">
+    <index id="199" parent="172" name="FK_STUDENT_INDEX_4">
+      <ObjectId>29</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>76</SourceTextLength>
+      <ColNames>ID_STUDENT</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <key id="200" parent="172" name="PK_STAGE">
       <ColNames>ID_STAGE</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="199" parent="172" name="FK_ENTREPRISE">
+    <foreign-key id="201" parent="172" name="FK_ENTREPRISE">
       <ColNames>ID_ENTERPRISE</ColNames>
       <RefTableName>ENTREPRISE</RefTableName>
       <RefKeyName>PRIMARY_KEY_8</RefKeyName>
@@ -351,59 +362,105 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="200" parent="173" name="ID_STUDENT">
+    <foreign-key id="202" parent="172" name="FK_STUDENT">
+      <ColNames>ID_STUDENT</ColNames>
+      <RefTableName>STUDENT</RefTableName>
+      <RefKeyName>PRIMARY_KEY_B</RefKeyName>
+      <RefColNames>ID_STUDENT</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="203" parent="173" name="ID_STUDENT">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="201" parent="173" name="FIRSTNAME_STUDENT">
+    <column id="204" parent="173" name="FIRSTNAME_STUDENT">
       <Position>2</Position>
       <DataType>VARCHAR(25)|0s</DataType>
     </column>
-    <column id="202" parent="173" name="LASTNAME_STUDENT">
+    <column id="205" parent="173" name="LASTNAME_STUDENT">
       <Position>3</Position>
       <DataType>VARCHAR(25)|0s</DataType>
     </column>
-    <column id="203" parent="173" name="GROUP">
+    <column id="206" parent="173" name="GROUP">
       <Position>4</Position>
       <DataType>VARCHAR(10)|0s</DataType>
     </column>
-    <index id="204" parent="173" name="PRIMARY_KEY_B">
-      <ObjectId>13</ObjectId>
+    <column id="207" parent="173" name="ID_TUTOR">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="208" parent="173" name="ID_DOC">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="209" parent="173" name="PRIMARY_KEY_B">
+      <ObjectId>21</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>79</SourceTextLength>
       <ColNames>ID_STUDENT</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="205" parent="173" name="PK_STUDENT">
+    <index id="210" parent="173" name="FK_TUTOR_INDEX_B">
+      <ObjectId>17</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>74</SourceTextLength>
+      <ColNames>ID_TUTOR</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <index id="211" parent="173" name="FK_DOC_INDEX_B">
+      <ObjectId>19</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>70</SourceTextLength>
+      <ColNames>ID_DOC</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <key id="212" parent="173" name="PK_STUDENT">
       <ColNames>ID_STUDENT</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="206" parent="174" name="ID_TUTOR">
+    <foreign-key id="213" parent="173" name="FK_TUTOR">
+      <ColNames>ID_TUTOR</ColNames>
+      <RefTableName>TUTOR</RefTableName>
+      <RefKeyName>PRIMARY_KEY_4</RefKeyName>
+      <RefColNames>ID_TUTOR</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="214" parent="173" name="FK_DOC">
+      <ColNames>ID_DOC</ColNames>
+      <RefTableName>DOC</RefTableName>
+      <RefKeyName>PRIMARY_KEY_1</RefKeyName>
+      <RefColNames>ID_DOC</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="215" parent="174" name="ID_TUTOR">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="207" parent="174" name="FIRSTNAME_PROF">
+    <column id="216" parent="174" name="FIRSTNAME_PROF">
       <Position>2</Position>
       <DataType>VARCHAR(25)|0s</DataType>
     </column>
-    <column id="208" parent="174" name="LASTNAME_PROF">
+    <column id="217" parent="174" name="LASTNAME_PROF">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="209" parent="174" name="LOGIN_PROF">
+    <column id="218" parent="174" name="LOGIN_PROF">
       <Position>4</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="210" parent="174" name="PWD_PROF">
+    <column id="219" parent="174" name="PWD_PROF">
       <Position>5</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <index id="211" parent="174" name="PRIMARY_KEY_4">
+    <index id="220" parent="174" name="PRIMARY_KEY_4">
       <ObjectId>9</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>75</SourceTextLength>
@@ -411,39 +468,77 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="212" parent="174" name="PK_TUTOR">
+    <key id="221" parent="174" name="PK_TUTOR">
       <ColNames>ID_TUTOR</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="213" parent="175" name="ID_VISITE">
+    <column id="222" parent="175" name="ID_VISITE">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="214" parent="175" name="FICHE_VISITE">
+    <column id="223" parent="175" name="FICHE_VISITE">
       <Position>2</Position>
       <DataType>BOOLEAN|0s</DataType>
     </column>
-    <column id="215" parent="175" name="PLANNIF">
+    <column id="224" parent="175" name="PLANNIF">
       <Position>3</Position>
       <DataType>BOOLEAN|0s</DataType>
     </column>
-    <column id="216" parent="175" name="FAITE">
+    <column id="225" parent="175" name="FAITE">
       <Position>4</Position>
       <DataType>BOOLEAN|0s</DataType>
     </column>
-    <index id="217" parent="175" name="PRIMARY_KEY_9">
-      <ObjectId>5</ObjectId>
+    <column id="226" parent="175" name="ID_TUTOR">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="227" parent="175" name="ID_STUDENT">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="228" parent="175" name="PRIMARY_KEY_9">
+      <ObjectId>37</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>77</SourceTextLength>
       <ColNames>ID_VISITE</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="218" parent="175" name="PK_VISITE">
+    <index id="229" parent="175" name="FK_TUTOR_VISITE_INDEX_9">
+      <ObjectId>5</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>80</SourceTextLength>
+      <ColNames>ID_TUTOR</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <index id="230" parent="175" name="FK_STUDENT_VISITE_INDEX_9">
+      <ObjectId>35</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>84</SourceTextLength>
+      <ColNames>ID_STUDENT</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <key id="231" parent="175" name="PK_VISITE">
       <ColNames>ID_VISITE</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="232" parent="175" name="FK_TUTOR_VISITE">
+      <ColNames>ID_TUTOR</ColNames>
+      <RefTableName>TUTOR</RefTableName>
+      <RefKeyName>PRIMARY_KEY_4</RefKeyName>
+      <RefColNames>ID_TUTOR</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="233" parent="175" name="FK_STUDENT_VISITE">
+      <ColNames>ID_STUDENT</ColNames>
+      <RefTableName>STUDENT</RefTableName>
+      <RefKeyName>PRIMARY_KEY_B</RefKeyName>
+      <RefColNames>ID_STUDENT</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
   </database-model>
 </dataSource>
