@@ -1,19 +1,22 @@
 package model;
 
-public class Visite {
+public class Visite
+{
 
     private final int idVisite;
     private boolean ficheVisite;
     private boolean plannif;
     private boolean faite;
-    private static int compteurId;
+    private int idTutor;
+    private int idStudent;
 
-    public Visite(boolean ficheVisite, boolean plannif, boolean faite){
-        this.idVisite = compteurId;
+    public Visite(int idVisite, boolean ficheVisite, boolean plannif, boolean faite, int idTutor, int idStudent){
+        this.idVisite = idVisite;
         this.ficheVisite = ficheVisite;
         this.plannif = plannif;
         this.faite = faite;
-        compteurId++;
+        this.idTutor = idTutor;
+        this.idStudent = idStudent;
     }
 
     public int getIdVisite() {
@@ -43,4 +46,12 @@ public class Visite {
     public void setFaite(boolean faite) {
         this.faite = faite;
     }
+
+    public int getIdTutor() { return idTutor; }
+
+    public void setIdTutor(int idTutor) { this.idTutor = idTutor; }
+
+    public int getIdStudent() { return idStudent; }
+
+    public void setIdStudent(int idStudent) { this.idStudent = idStudent; }
 }

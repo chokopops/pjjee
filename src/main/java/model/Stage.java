@@ -9,19 +9,19 @@ public class Stage {
     private Date fin;
     private String mds;
     private int idEntreprise;
+    private int idStudent;
     private int noteTech;
     private int noteCom;
-    private static int compteurId;
 
-    public Stage( Date debut, Date fin, String mds, int idEntreprise, int noteTech, int noteCom) {
-        this.idStage = compteurId ;
+    public Stage( int idStage, Date debut, Date fin, String mds, int idEntreprise, int idStudent, int noteTech, int noteCom) {
+        this.idStage = idStage ;
         this.debut = debut;
         this.fin = fin;
         this.mds = mds;
         this.idEntreprise = idEntreprise;
+        this.idStudent = idStudent;
         this.noteTech = noteTech;
         this.noteCom = noteCom;
-        compteurId++;
     }
 
 
@@ -56,6 +56,10 @@ public class Stage {
     public void setIdEntreprise(int idEntreprise) {
         this.idEntreprise = idEntreprise;
     }
+
+    public int getIdStudent() { return idStudent; }
+
+    public void setIdStudent(int idStudent) { this.idStudent = idStudent; }
 
     public int getNoteTech() {
         return noteTech;

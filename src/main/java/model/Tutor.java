@@ -1,7 +1,5 @@
 package model;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-
 public class Tutor
 {
     private final int idTutor;

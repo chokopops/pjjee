@@ -1,22 +1,24 @@
 package model;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-
 public class Student
 {
     private final int idStudent;
     private String firstname;
     private String lastname;
     private String group;
-    private static int compteurId;
+    private int idTutor;
+    private int idDoc;
 
-    public Student(String firstname, String lastname, String group){
-        this.idStudent = compteurId;
+    public Student(int idStudent, String firstname, String lastname, String group, int tutor, int doc)
+    {
+        this.idStudent = idStudent;
         this.firstname = firstname;
         this.lastname = lastname;
         this.group = group;
-        compteurId++;
+        this.idTutor = tutor;
+        this.idDoc = doc;
     }
+
     public String getFirstname() {
         return firstname;
     }
@@ -41,7 +43,13 @@ public class Student
         this.group = group;
     }
 
-    public int getIdStudent() {
-        return idStudent;
-    }
+    public int getIdStudent() { return idStudent; }
+
+    public int getIdTutor() { return idTutor; }
+
+    public void setIdTutor(int idTutor) { this.idTutor = idTutor; }
+
+    public int getIdDoc() { return idDoc; }
+
+    public void setIdDoc(int idDoc) { this.idDoc = idDoc; }
 }
