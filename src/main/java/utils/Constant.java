@@ -9,4 +9,10 @@ public class Constant {
     public static final String DB_PWD = "adm";
     public static Connection conn = null;
 
+    public static String registerSuccess = "You are now register";
+    public static String registerFail = "Fail to register";
+    public static String registerFailEmail = "Email already use";
+    public static String loginSuccess = "You are now login";
+    public static String loginFail = "Fail to login";
+
 }

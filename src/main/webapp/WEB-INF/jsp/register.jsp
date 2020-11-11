@@ -29,10 +29,10 @@
     </div>
 
     <h1>Hello welcome, please register !</h1><br>
-
-    <label> First name : </label> <input type="text" name="firstnameForm"/><br/>
-    <label> Last name : </label> <input type="text" name="lastnameForm"/><br/>
-    <label> Password : </label> <input type="text" name="passForm"/> <br/>
+    <label> Email : </label> <input type="text" name="emailForm" required/><br/>
+    <label> First name : </label> <input type="text" name="firstnameForm" required/><br/>
+    <label> Last name : </label> <input type="text" name="lastnameForm" required/><br/>
+    <label> Password : </label> <input type="password" name="passForm" required/> <br/>
 
     <input type="submit" name="submit" value="Submit"/>
 </form>
