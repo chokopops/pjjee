@@ -1,5 +1,7 @@
 package ctrl;
 
+import model.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +14,30 @@ import java.sql.SQLException;
 public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        if (request.getParameter("profile").equals("student")){
+            Student studentForm = new Student();
+            studentForm.setAccount(request);
+            request.setAttribute("loginFormIndex",studentForm);
+        }
+        else{
+            System.out.println("ça marche po");
+        }
+
+        request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
+
+
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException
     {
 
     }
+
+
 }

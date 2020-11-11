@@ -3,15 +3,15 @@ package model;
 public class Tutor
 {
     private final int idTutor;
-    private String login;
+    private String email;
     private String pwd;
     private String firstName;
     private String lastName;
     private static int compteurId;
 
-    public Tutor(String login, String pwd, String firstName, String lastName){
+    public Tutor(String email, String pwd, String firstName, String lastName){
         this.idTutor = compteurId;
-        this.login = login;
+        this.email = email;
         this.pwd = pwd;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,8 +20,8 @@ public class Tutor
 
     /// GETTER AND SETTER ///
 
-    public String getLogin() { return login; }
-    public void setLogin(String login) { this.login = login; }
+    public String getLogin() { return email; }
+    public void setLogin(String login) { this.email = login; }
 
     public String getPwd() { return pwd; }
     public void setPwd(String pwd) { this.pwd = pwd; }

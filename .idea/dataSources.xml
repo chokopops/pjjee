@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ST2EEDB" uuid="1c9e463c-3bf9-4111-87a9-ed3e82a89ee2">
+    <data-source source="LOCAL" name="ST2EEDB2" uuid="73b95dbb-35b8-4018-89dd-441e2cfe7633">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:~/ST2EEDB</jdbc-url>
+      <jdbc-url>jdbc:h2:~/ST2EEDB2</jdbc-url>
     </data-source>
   </component>
 </project>

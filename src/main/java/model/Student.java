@@ -1,28 +1,61 @@
 package model;
 
+import ctrl.DataServices;
+import static utils.Constant.*;
+import javax.servlet.http.HttpServletRequest;
+import java.sql.PreparedStatement;
+
 public class Student
 {
-    private final int idStudent;
+    //private final int idStudent;
     private String firstname;
     private String lastname;
     private String group;
+    private String email;
+    private String pwd;
     private int idTutor;
     private int idDoc;
+    private String resultat;
 
-    public Student(int idStudent, String firstname, String lastname, String group, int tutor, int doc)
+    public Student()
     {
-        this.idStudent = idStudent;
+       /* this.idStudent = idStudent;
         this.firstname = firstname;
         this.lastname = lastname;
         this.group = group;
+        this.email = email;
+        this.pwd = pwd;
         this.idTutor = tutor;
-        this.idDoc = doc;
+        this.idDoc = doc;*/
+    }
+
+    public void setAccount(HttpServletRequest request){
+        conn = DataServices.connect(conn);
+
+        firstname = request.getParameter("firstnameForm");
+        lastname = request.getParameter("lastnameForm");
+        pwd = request.getParameter("passForm");
+        try{
+            String query = " insert into STUDENT (FIRSTNAME_STUDENT, LASTNAME_STUDENT, PASSWORD_STUDENT) values ('"+firstname+"', '"+lastname+"', '"+pwd+"')";
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.execute();
+            resultat = "You are now register";
+            System.out.println("et oui jammy");
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+
+    }
+
+    public String getResultat(){
+        return resultat;
     }
 
     public String getFirstname() {
         return firstname;
     }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -30,7 +63,6 @@ public class Student
     public String getLastname() {
         return lastname;
     }
-
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -38,18 +70,20 @@ public class Student
     public String getGroup() {
         return group;
     }
-
     public void setGroup(String group) {
         this.group = group;
     }
 
-    public int getIdStudent() { return idStudent; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    //public int getIdStudent() { return idStudent; }
 
     public int getIdTutor() { return idTutor; }
-
     public void setIdTutor(int idTutor) { this.idTutor = idTutor; }
 
     public int getIdDoc() { return idDoc; }
-
     public void setIdDoc(int idDoc) { this.idDoc = idDoc; }
+
+
 }
