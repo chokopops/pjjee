@@ -15,6 +15,8 @@
 <c:if test="${ !empty sessionScope.email }">
     <p>mail : ${ sessionScope.email }!</p>
 </c:if>
+<c:out value="${ email }" />
+<c:out value="${ profile }" />
 
     <form name="loginFormIndex" method="post" action="Login">
         <p>Select your profile:</p>

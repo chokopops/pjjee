@@ -5,10 +5,7 @@ import static utils.Constant.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 import static utils.Constant.registerSuccess;
@@ -22,8 +19,27 @@ public class Login extends HttpServlet {
             if (studentForm.getResultat().equals(loginSuccess)){//If login succeed you go to login page
 
                 String emailStudent = studentForm.getEmail();
-                HttpSession session = request.getSession();
-                session.setAttribute("email", emailStudent);
+                String profile = (String) request.getParameter("profile");
+
+                Cookie cookieEmail = new Cookie("email", emailStudent);
+                Cookie cookieProfile = new Cookie("profile", profile);
+                cookieEmail.setMaxAge(60 * 60);
+                cookieProfile.setMaxAge(60 * 60);
+                response.addCookie(cookieEmail);
+                response.addCookie(cookieProfile);
+                Cookie[] cookies = request.getCookies();
+                if (cookies != null) {
+                    for (Cookie cookie : cookies) {
+                        if (cookie.getName().equals("email")) {
+                            request.setAttribute("email", cookie.getValue());
+                        }
+                        if (cookie.getName().equals("profile")) {
+                            request.setAttribute("profile", cookie.getValue());
+                        }
+                    }
+                }
+                /*HttpSession session = request.getSession();
+                session.setAttribute("email", emailStudent);*/
 
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
             }
