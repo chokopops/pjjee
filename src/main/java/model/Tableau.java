@@ -19,8 +19,12 @@ public class Tableau {
         this.StudentTutor = studentTutor;
         this.StudentVisite = studentVisite;
 
+    }
+    public  Tableau()
+    {
 
     }
+
 
     public Doc getStudentDoc(){ return StudentDoc;}
     public void setStudentDoc(Doc studentDoc){ this.StudentDoc = studentDoc;}

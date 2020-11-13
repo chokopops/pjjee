@@ -15,7 +15,7 @@
         <tr>
             <td>${aEtudiant.getStudentInfo.getGroupe()}</td><!-- String -->
             <td>${aEtudiant.getNom()}</td><!-- String -->
-            <td>${aEtudiant.getEstChefDeStage()}</td><!-- Bool -->
+            <td>${aEtudiant.getCahierDesChargesFait()}</td><!-- Bool -->
             <td>${aEtudiant.getFicheVisiteFait()}</td><!-- Bool -->
             <td>${aEtudiant.getFicheEvalEntretienFait()}</td><!-- Bool -->
             <td>${aEtudiant.getSondageWebFait()}</td><!-- Bool -->
