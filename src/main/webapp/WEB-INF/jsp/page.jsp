@@ -13,7 +13,7 @@
 <table>
     <c:forEach items="${listEtudiants}" var="aEtudiant">
         <tr>
-            <td>${aEtudiant.getGroupe()}</td><!-- String -->
+            <td>${aEtudiant.getStudentInfo.getGroupe()}</td><!-- String -->
             <td>${aEtudiant.getNom()}</td><!-- String -->
             <td>${aEtudiant.getEstChefDeStage()}</td><!-- Bool -->
             <td>${aEtudiant.getFicheVisiteFait()}</td><!-- Bool -->
