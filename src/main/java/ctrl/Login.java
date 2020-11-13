@@ -1,6 +1,6 @@
 package ctrl;
 
-import model.Student;
+import model.*;
 import static utils.Constant.*;
 
 import javax.servlet.ServletException;
@@ -13,25 +13,25 @@ import static utils.Constant.registerSuccess;
 @WebServlet(name = "Login")
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getParameter("profile").equals("student")){//If you are student
-            Student studentForm = new Student();
-            studentForm.verifAccount(request);
-            if (studentForm.getResultat().equals(loginSuccess)){//If login succeed you go to login page
+        
+            Tutor Form = new Tutor();
+            Form.verifAccount(request);
+            if (Form.getResultat().equals(loginSuccess)){//If login succeed you go to login page
 
-                String emailStudent = studentForm.getEmail();
+                String login = Form.getLogin();
                 String profile = (String) request.getParameter("profile");
 
-                Cookie cookieEmail = new Cookie("email", emailStudent);
+                Cookie cookieLogin = new Cookie("login", login);
                 Cookie cookieProfile = new Cookie("profile", profile);
-                cookieEmail.setMaxAge(60 * 60);
+                cookieLogin.setMaxAge(60 * 60);
                 cookieProfile.setMaxAge(60 * 60);
-                response.addCookie(cookieEmail);
+                response.addCookie(cookieLogin);
                 response.addCookie(cookieProfile);
                 Cookie[] cookies = request.getCookies();
                 if (cookies != null) {
                     for (Cookie cookie : cookies) {
-                        if (cookie.getName().equals("email")) {
-                            request.setAttribute("email", cookie.getValue());
+                        if (cookie.getName().equals("login")) {
+                            request.setAttribute("login", cookie.getValue());
                         }
                         if (cookie.getName().equals("profile")) {
                             request.setAttribute("profile", cookie.getValue());
@@ -46,13 +46,20 @@ public class Login extends HttpServlet {
             else{//If login failed you stay on register page
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
             }
-        }
-        else{
-            request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
-        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        Cookie[] cookiesb = request.getCookies();
+        if (cookiesb != null) {
+            for (Cookie cookie : cookiesb) {
+                if (cookie.getName().equals("login")) {
+                    request.setAttribute("login", cookie.getValue());
+                }
+                if (cookie.getName().equals("profile")) {
+                    request.setAttribute("profile", cookie.getValue());
+                }
+            }
+        }
+        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
     }
 }

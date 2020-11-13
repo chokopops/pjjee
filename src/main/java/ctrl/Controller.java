@@ -15,24 +15,15 @@ import java.sql.SQLException;
 public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        if (request.getParameter("profile").equals("student")){//If you are student
-            Student studentForm = new Student();
-            studentForm.setAccount(request);
-            request.setAttribute("loginFormIndex",studentForm);
-            if (studentForm.getResultat().equals(registerSuccess)){//If register succed you go to login page
+            Tutor Form = new Tutor();
+            Form.setAccount(request);//Call methode which write in the data base
+            request.setAttribute("loginFormIndex",Form);
+            if (Form.getResultat().equals(registerSuccess)){//If register succed you go to login page
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
             }
             else{//If register failed you stay on register page
                 request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
             }
-        }
-        else{
-            request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
-        }
-
-
-
-
 
     }
 
