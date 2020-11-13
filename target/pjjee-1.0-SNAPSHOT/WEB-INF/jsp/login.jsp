@@ -12,34 +12,21 @@
 </head>
 <body>
 <c:if test="${!empty loginFormIndex.resultat}"><p> <c:out value="${loginFormIndex.resultat}"/></p></c:if>
-<c:if test="${ !empty sessionScope.email }">
-    <p>mail : ${ sessionScope.email }!</p>
+<c:if test="${ !empty sessionScope.login }">
+    <p>login : ${ sessionScope.login }!</p>
 </c:if>
-<c:out value="${ email }" />
+<c:out value="${ login }" />
 <c:out value="${ profile }" />
 
     <form name="loginFormIndex" method="post" action="Login">
-        <p>Select your profile:</p>
-
-        <div>
-            <input type="radio" id="tutor" name="profile" value="tutor">
-            <label for="tutor">Tutor</label>
-        </div>
-        <div>
-            <input type="radio" id="student" name="profile" value="student" checked>
-            <label for="student">Student</label>
-        </div>
-        <div>
-            <input type="radio" id="admin" name="profile" value="admin">
-            <label for="admin">Admin</label>
-        </div>
 
         <h1>Hello welcome, please sign in !</h1><br>
 
-        <label> Email : </label> <input type="text" name="emailForm" required/><br/>
+        <label> Login : </label> <input type="text" name="loginForm" required/><br/>
         <label> Password : </label> <input type="password" name="passForm" required/> <br/>
 
         <input type="submit" name="submit" value="Submit"/>
     </form>
+<a href="/pjjee_war/Controller"><button class="Register" type="button" >Register</button></a>
 </body>
 </html>
