@@ -57,8 +57,6 @@ public class Student
         this.group = group;
     }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
 
     //public int getIdStudent() { return idStudent; }
 
