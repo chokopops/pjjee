@@ -27,6 +27,6 @@
 
         <input type="submit" name="submit" value="Submit"/>
     </form>
-<a href="/pjjee_war/Controller"><button class="Register" type="button" >Register</button></a>
+<a href="/Controller"><button class="Register" type="button" >Register</button></a>
 </body>
 </html>

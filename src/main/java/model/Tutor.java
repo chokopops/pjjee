@@ -32,7 +32,7 @@ public class Tutor
 
     public void setAccount(HttpServletRequest request){
         resultat = null;
-        conn = DataServices.connect(conn);
+        conn = DataServices.connect(conn);//Call methode connect of Dataservices to connect to our database
         login = request.getParameter("loginForm");
 
         if (!verifLogin(login, conn)){//If we don't have already the mail

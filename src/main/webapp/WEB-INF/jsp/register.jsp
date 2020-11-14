@@ -22,6 +22,6 @@
 
     <input type="submit" name="submit" value="Submit"/>
 </form>
-<a href="/pjjee_war/Login"><button class="Login" type="button" >Login</button></a>
+<a href="/Login"><button class="Login" type="button" >Login</button></a>
 </body>
 </html>

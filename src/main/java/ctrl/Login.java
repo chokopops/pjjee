@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
                 /*HttpSession session = request.getSession();
                 session.setAttribute("email", emailStudent);*/
 
-                request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
             }
             else{//If login failed you stay on register page
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);

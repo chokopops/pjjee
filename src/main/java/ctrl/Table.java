@@ -20,19 +20,6 @@ import java.util.logging.Logger;
 public class Table extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        try {
-            Class.forName(JDBC_DRIVER);
-            Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PWD);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(""); // Il faut faire ressortir les 17 variables demandées dans page depuis la database.//
-            ArrayList<Tableau> friends = new ArrayList<>();
-        }
-        catch (SQLException | ClassNotFoundException ex)
-        {
-            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
-
-        }
-
 
     }
 
@@ -42,5 +29,7 @@ public class Table extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        System.out.println("yo");
+        Tableau TabStud = new Tableau();
     }
 }
