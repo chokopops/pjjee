@@ -16,6 +16,7 @@ public class Login extends HttpServlet {
         
             Tutor Form = new Tutor();
             Form.verifAccount(request);
+            
             if (Form.getResultat().equals(loginSuccess)){//If login succeed you go to login page
 
                 String login = Form.getLogin();
