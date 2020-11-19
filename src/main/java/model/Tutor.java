@@ -23,12 +23,6 @@ public class Tutor
     private String resultat;
 
     public Tutor(){
-       /* this.idTutor = compteurId;
-        this.email = email;
-        this.pwd = pwd;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        compteurId++;*/
     }
 
     public void setAccount(HttpServletRequest request){

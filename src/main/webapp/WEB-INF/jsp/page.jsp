@@ -13,27 +13,120 @@
 <c:if test="${ !empty sessionScope.idtutor}">
     <p>Id Tutor ${ sessionScope.idtutor } !</p>
 </c:if>
-<table>
-    <c:forEach items="${listEtudiants}" var="aEtudiant">
-            <tr>
-                <td>${aEtudiant.getStudentInfo().getGroup()}</td><!-- String -->
-                <td>${aEtudiant.getStudentInfo().getLastname()}</td><!-- String -->
-                <td>${aEtudiant.getStudentDoc().isCdc()}</td><!-- String -->
-                <td>${aEtudiant.getStudentVisite().isFicheVisite()}</td><!-- String -->
-                <td>${aEtudiant.getStudentDoc().isFicheEval()}</td><!-- String -->
-                <td>${aEtudiant.getStudentDoc().isSondage()}</td><!-- String -->
-                <td>${aEtudiant.getStudentDoc().isRapport()}</td><!-- String -->
-                <td>${aEtudiant.getStudentDoc().isSoutenance()}</td><!-- String -->
-                <td>${aEtudiant.getStudentVisite().isPlannif()}</td><!-- String -->
-                <td>${aEtudiant.getStudentVisite().isFaite()}</td><!-- String -->
-                <td>${aEtudiant.getStudentStage().getDebut()}</td><!-- String -->
-                <td>${aEtudiant.getStudentStage().getFin()}</td><!-- String -->
-                <td>${aEtudiant.getStudentEnterprise().getNom()}</td><!-- String -->
-                <td>${aEtudiant.getStudentStage().getMds()}</td><!-- String -->
-                <td>${aEtudiant.getStudentEnterprise().getAdresse()}</td><!-- String -->
-                <td>${aEtudiant.getStudentStage().getNoteTech()}</td><!-- String -->
-                <td>${aEtudiant.getStudentStage().getNoteCom()}</td><!-- String -->
-            </tr>
-    </c:forEach>
-</table>
+
+    <table>
+        <tr>
+            <td>Group</td>
+            <td>Last Name</td>
+            <td>Cdc</td>
+            <td>Fiche visite</td>
+            <td>Fiche eval</td>
+            <td>Sondage</td>
+            <td>Rapport</td>
+            <td>Soutenance</td>
+            <td>Plannif</td>
+            <td>Faite</td>
+            <td>Stage Date debut</td>
+            <td>Stage Date fin</td>
+            <td>Entreprise nom</td>
+            <td>Maitre de stage</td>
+            <td>Entreprise adresse</td>
+            <td>Note technique</td>
+            <td>Notet com</td>
+        </tr>
+        <c:set var="count" value="0" scope="page" />
+        <c:forEach items="${listEtudiants}" var="aEtudiant">
+
+                <tr>
+                    <form name="TableFormIndex" method="post" action="Table">
+                        <input type="hidden" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
+                    <td>${aEtudiant.getStudentInfo().getGroup()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentInfo().getLastname()}</td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="cdc" name="cdc"
+                        <c:if test="${aEtudiant.getStudentDoc().isCdc() == true }">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentDoc().isCdc() != true }">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="fiche_visite" name="fiche_visite"
+                        <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() != true}">
+                               />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="fiche_eval" name="fiche_eval"
+                        <c:if test="${aEtudiant.getStudentDoc().isFicheEval() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentDoc().isFicheEval() != true}">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="sondage" name="sondage"
+                        <c:if test="${aEtudiant.getStudentDoc().isSondage() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentDoc().isSondage() != true}">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="rapport" name="rapport"
+                        <c:if test="${aEtudiant.getStudentDoc().isRapport() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentDoc().isRapport() != true}">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="soutenance" name="soutenance"
+                        <c:if test="${aEtudiant.getStudentDoc().isSoutenance() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentDoc().isSoutenance() != true}">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="plannif" name="plannif"
+                        <c:if test="${aEtudiant.getStudentVisite().isPlannif() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentVisite().isPlannif() != true}">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>
+                        <input type="checkbox" id="faite" name="faite"
+                        <c:if test="${aEtudiant.getStudentVisite().isFaite() == true}">
+                               checked/>
+                        </c:if>
+                        <c:if test="${aEtudiant.getStudentVisite().isFaite() != true}">
+                            />
+                        </c:if>
+                    </td><!-- String -->
+                    <td>${aEtudiant.getStudentStage().getDebut()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentStage().getFin()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentEnterprise().getNom()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentStage().getMds()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentEnterprise().getAdresse()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentStage().getNoteTech()}</td><!-- String -->
+                    <td>${aEtudiant.getStudentStage().getNoteCom()}</td><!-- String -->
+                    <td><input type="submit" name="submit" value="Valid Edit"/></td>
+                    </form>
+                </tr>
+            <c:set var="count" value="${count + 1}" scope="page"/>
+
+        </c:forEach>
+    </table>
+
 </body>

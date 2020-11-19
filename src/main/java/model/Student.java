@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class Student
 {
-    //private final int idStudent;
+    private int idStudent;
     private String firstname;
     private String lastname;
     private String group;
@@ -22,19 +22,17 @@ public class Student
 
     public Student()
     {
-       /* this.idStudent = idStudent;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.group = group;
-        this.email = email;
-        this.pwd = pwd;
-        this.idTutor = tutor;
-        this.idDoc = doc;*/
     }
 
 
 
 
+    public void setIdStudent(int idStudent){
+        this.idStudent = idStudent;
+    }
+    public int getIdStudent(){
+        return idStudent;
+    }
 
     public String getFirstname() {
         return firstname;
