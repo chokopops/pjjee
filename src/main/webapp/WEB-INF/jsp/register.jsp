@@ -13,7 +13,6 @@
 <body>
 <form name="loginFormIndex" method="post" action="Controller">
 
-
     <h1>Hello welcome, please register !</h1><br>
     <label> Login : </label> <input type="text" name="loginForm" required/><br/>
     <label> First name : </label> <input type="text" name="firstnameForm" required/><br/>

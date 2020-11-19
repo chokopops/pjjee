@@ -10,28 +10,30 @@
     <title>Title</title>
 </head>
 <body>
+<c:if test="${ !empty sessionScope.idtutor}">
+    <p>Id Tutor ${ sessionScope.idtutor } !</p>
+</c:if>
 <table>
     <c:forEach items="${listEtudiants}" var="aEtudiant">
-        <tr>
-            <td>${aEtudiant.getStudentInfo.getGroupe()}</td><!-- String -->
-            <td>${aEtudiant.getNom()}</td><!-- String -->
-            <td>${aEtudiant.getCahierDesChargesFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getFicheVisiteFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getFicheEvalEntretienFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getSondageWebFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getRapportRenduFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getSoutienFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getVisitePlanifieFait()}</td><!-- Bool -->
-            <td>${aEtudiant.getVisiteFaite()}</td><!-- Bool -->
-            <td>${aEtudiant.getDateDebutStage()}</td><!-- Date -->
-            <td>${aEtudiant.getDateFinStage()}</td><!-- Date -->
-            <td>${aEtudiant.getEntrepriseDeStage()}</td><!-- String -->
-            <td>${aEtudiant.getMaitreDeStage()}</td>v
-            <td>${aEtudiant.getAdresseEntrepriseStage()}</td><!-- String -->
-            <td>${aEtudiant.getNoteTechniqueStage()}</td><!-- int -->
-            <td>${aEtudiant.getNoteComStage()}</td><!-- int -->
-
-        </tr>
+            <tr>
+                <td>${aEtudiant.getStudentInfo().getGroup()}</td><!-- String -->
+                <td>${aEtudiant.getStudentInfo().getLastname()}</td><!-- String -->
+                <td>${aEtudiant.getStudentDoc().isCdc()}</td><!-- String -->
+                <td>${aEtudiant.getStudentVisite().isFicheVisite()}</td><!-- String -->
+                <td>${aEtudiant.getStudentDoc().isFicheEval()}</td><!-- String -->
+                <td>${aEtudiant.getStudentDoc().isSondage()}</td><!-- String -->
+                <td>${aEtudiant.getStudentDoc().isRapport()}</td><!-- String -->
+                <td>${aEtudiant.getStudentDoc().isSoutenance()}</td><!-- String -->
+                <td>${aEtudiant.getStudentVisite().isPlannif()}</td><!-- String -->
+                <td>${aEtudiant.getStudentVisite().isFaite()}</td><!-- String -->
+                <td>${aEtudiant.getStudentStage().getDebut()}</td><!-- String -->
+                <td>${aEtudiant.getStudentStage().getFin()}</td><!-- String -->
+                <td>${aEtudiant.getStudentEnterprise().getNom()}</td><!-- String -->
+                <td>${aEtudiant.getStudentStage().getMds()}</td><!-- String -->
+                <td>${aEtudiant.getStudentEnterprise().getAdresse()}</td><!-- String -->
+                <td>${aEtudiant.getStudentStage().getNoteTech()}</td><!-- String -->
+                <td>${aEtudiant.getStudentStage().getNoteCom()}</td><!-- String -->
+            </tr>
     </c:forEach>
 </table>
 </body>

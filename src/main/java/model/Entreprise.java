@@ -2,18 +2,12 @@ package model;
 
 public class Entreprise
 {
-    private final int idEntreprise;
     private String nom;
     private String adresse;
 
-    public Entreprise(int idEntreprise, String nom, String adresse)
+    public Entreprise()
     {
-        this.idEntreprise = idEntreprise;
-        this.nom = nom;
-        this.adresse = adresse;
     }
-
-    public int getIdEntreprise() { return idEntreprise; }
 
     public String getNom() { return nom; }
 

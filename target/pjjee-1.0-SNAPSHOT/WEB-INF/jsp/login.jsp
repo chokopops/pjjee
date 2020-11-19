@@ -11,12 +11,6 @@
     <title>Login Page</title>
 </head>
 <body>
-<c:if test="${!empty loginFormIndex.resultat}"><p> <c:out value="${loginFormIndex.resultat}"/></p></c:if>
-<c:if test="${ !empty sessionScope.login }">
-    <p>login : ${ sessionScope.login }!</p>
-</c:if>
-<c:out value="${ login }" />
-<c:out value="${ profile }" />
 
     <form name="loginFormIndex" method="post" action="Login">
 
@@ -27,6 +21,6 @@
 
         <input type="submit" name="submit" value="Submit"/>
     </form>
-<a href="/pjjee_war/Controller"><button class="Register" type="button" >Register</button></a>
+<a href="/Controller"><button class="Register" type="button" >Register</button></a>
 </body>
 </html>

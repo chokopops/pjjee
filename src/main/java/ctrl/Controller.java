@@ -24,7 +24,6 @@ public class Controller extends HttpServlet {
             else{//If register failed you stay on register page
                 request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
             }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

@@ -3,25 +3,15 @@ package model;
 public class Visite
 {
 
-    private final int idVisite;
     private boolean ficheVisite;
     private boolean plannif;
     private boolean faite;
     private int idTutor;
     private int idStudent;
 
-    public Visite(int idVisite, boolean ficheVisite, boolean plannif, boolean faite, int idTutor, int idStudent){
-        this.idVisite = idVisite;
-        this.ficheVisite = ficheVisite;
-        this.plannif = plannif;
-        this.faite = faite;
-        this.idTutor = idTutor;
-        this.idStudent = idStudent;
+    public Visite(){
     }
 
-    public int getIdVisite() {
-        return idVisite;
-    }
 
     public boolean isFicheVisite() {
         return ficheVisite;

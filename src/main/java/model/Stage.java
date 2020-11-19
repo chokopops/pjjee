@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Stage {
 
-    private final int idStage;
     private Date debut;
     private Date fin;
     private String mds;
@@ -13,15 +12,7 @@ public class Stage {
     private int noteTech;
     private int noteCom;
 
-    public Stage( int idStage, Date debut, Date fin, String mds, int idEntreprise, int idStudent, int noteTech, int noteCom) {
-        this.idStage = idStage ;
-        this.debut = debut;
-        this.fin = fin;
-        this.mds = mds;
-        this.idEntreprise = idEntreprise;
-        this.idStudent = idStudent;
-        this.noteTech = noteTech;
-        this.noteCom = noteCom;
+    public Stage( ) {
     }
 
 
@@ -77,7 +68,4 @@ public class Stage {
         this.noteCom = noteCom;
     }
 
-    public int getIdStage() {
-        return idStage;
-    }
 }

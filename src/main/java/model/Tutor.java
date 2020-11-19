@@ -16,6 +16,7 @@ public class Tutor
    // private final int idTutor;
     private String login;
     private String pwd;
+    private int idtutor;
     private String firstName;
     private String lastName;
     private static int compteurId;
@@ -66,10 +67,11 @@ public class Tutor
             Statement stmt = conn.createStatement();
             ResultSet rs;
             System.out.println("conn good");
-            rs = stmt.executeQuery("SELECT LOGIN_PROF, PWD_PROF, FIRSTNAME_PROF, LASTNAME_PROF FROM TUTOR WHERE LOGIN_PROF='"+login+"'");
+            rs = stmt.executeQuery("SELECT ID_TUTOR, LOGIN_PROF, PWD_PROF, FIRSTNAME_PROF, LASTNAME_PROF FROM TUTOR WHERE LOGIN_PROF='"+login+"'");
             while ( rs.next() ) {
                 if ((rs.getString("PWD_PROF")).equals(pwd)){
                     resultat = loginSuccess;
+                    idtutor = rs.getInt("ID_TUTOR");
                     firstName = rs.getString("FIRSTNAME_PROF");
                     lastName = rs.getString("LASTNAME_PROF");
                     System.out.println("log et mail good");
@@ -127,9 +129,11 @@ public class Tutor
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
 
-    /*public int getIdTutor() {
-        return idTutor;
-    }*/
+
+
+    public int getIdTutor() {
+        return idtutor;
+    }
 
     /// GETTER AND SETTER ///
 }

@@ -20,6 +20,14 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Table</servlet-name>
+        <servlet-class>ctrl.Table</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Table</servlet-name>
+        <url-pattern>/Table</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>

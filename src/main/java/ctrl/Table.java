@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -28,8 +29,12 @@ public class Table extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        int tutor = (int) session.getAttribute("idtutor");
+        Tableau TabStud = new Tableau(tutor);
 
-        System.out.println("yo");
-        Tableau TabStud = new Tableau();
+        request.setAttribute("listEtudiants",TabStud.getTable());
+        request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
+
     }
 }

@@ -2,23 +2,16 @@ package model;
 
 public class Doc {
 
-    private final int idDoc;
     private boolean cdc;
     private boolean ficheEval;
     private boolean sondage;
     private boolean rapport;
     private boolean soutenance;
 
-    public Doc(int idDoc, boolean cdc, boolean ficheEval, boolean sondage, boolean rapport, boolean soutenance){
-        this.idDoc = idDoc;
-        this.cdc = cdc;
-        this.ficheEval = ficheEval;
-        this.sondage = sondage;
-        this.rapport = rapport;
-        this.soutenance = soutenance;
+    public Doc(){
+
     }
 
-    public int getIdDoc() { return idDoc; }
 
     public boolean isCdc() { return cdc; }
     public void setCdc(boolean cdc) { this.cdc = cdc; }
