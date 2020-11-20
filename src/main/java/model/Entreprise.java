@@ -2,8 +2,8 @@ package model;
 
 public class Entreprise
 {
-    private String nom;
-    private String adresse;
+    private String nom = "";
+    private String adresse = "";
 
     public Entreprise()
     {

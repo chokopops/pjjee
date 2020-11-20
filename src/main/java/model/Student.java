@@ -11,14 +11,12 @@ import java.sql.Statement;
 public class Student
 {
     private int idStudent;
-    private String firstname;
-    private String lastname;
-    private String group;
-    private String email;
-    private String pwd;
+    private String firstname = "";
+    private String lastname = "";
+    private String group = "";
     private int idTutor;
     private int idDoc;
-    private String resultat;
+    private String resultat = "";
 
     public Student()
     {

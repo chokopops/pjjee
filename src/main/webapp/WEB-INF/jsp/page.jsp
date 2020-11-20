@@ -13,7 +13,10 @@
 <c:if test="${ !empty sessionScope.idtutor}">
     <p>Id Tutor ${ sessionScope.idtutor } !</p>
 </c:if>
-
+<form name="Recherche" method="post" action="TableSearch">
+    <td><input type="text" name="search" /></td>
+    <td><input type="submit" name="search" value="Search"/></td>
+</form>
     <table>
         <tr>
             <td>Group</td>
@@ -34,7 +37,7 @@
             <td>Note technique</td>
             <td>Notet com</td>
         </tr>
-        <c:set var="count" value="0" scope="page" />
+        <c:set var="count" value="0" scope="session" />
         <c:forEach items="${listEtudiants}" var="aEtudiant">
 
                 <tr>
@@ -122,9 +125,14 @@
                     <td>${aEtudiant.getStudentStage().getNoteTech()}</td><!-- String -->
                     <td>${aEtudiant.getStudentStage().getNoteCom()}</td><!-- String -->
                     <td><input type="submit" name="submit" value="Valid Edit"/></td>
+                        <c:set var="count" value="${count + 1}" scope="session"/>
+                    </form>
+                    <form name="TableFormIndex" method="post" action="Detail">
+                        <input type="hidden" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
+                        <td><input type="submit" name="detail" value="Detail"/></td>
                     </form>
                 </tr>
-            <c:set var="count" value="${count + 1}" scope="page"/>
+
 
         </c:forEach>
     </table>

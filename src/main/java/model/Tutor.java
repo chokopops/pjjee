@@ -14,13 +14,13 @@ import static utils.Constant.registerFailEmail;
 public class Tutor
 {
    // private final int idTutor;
-    private String login;
-    private String pwd;
+    private String login = "";
+    private String pwd = "";
     private int idtutor;
-    private String firstName;
-    private String lastName;
+    private String firstName = "";
+    private String lastName = "";
     private static int compteurId;
-    private String resultat;
+    private String resultat = "";
 
     public Tutor(){
     }

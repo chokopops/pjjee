@@ -28,6 +28,22 @@
         <servlet-name>Table</servlet-name>
         <url-pattern>/Table</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Detail</servlet-name>
+        <servlet-class>ctrl.Detail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Detail</servlet-name>
+        <url-pattern>/Detail</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>TableSearch</servlet-name>
+        <servlet-class>ctrl.TableSearch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TableSearch</servlet-name>
+        <url-pattern>/TableSearch</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>

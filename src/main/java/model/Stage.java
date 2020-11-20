@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Stage {
 
-    private Date debut;
-    private Date fin;
-    private String mds;
+    private Date debut = null;
+    private Date fin = null;
+    private String mds = "";
     private int idEntreprise;
     private int idStudent;
     private int noteTech;

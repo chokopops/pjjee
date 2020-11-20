@@ -28,8 +28,10 @@ public class Table extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int tutor = (int) session.getAttribute("idtutor");
+        int student = Integer.parseInt(request.getParameter("id_student"));
         Tableau Form = new Tableau(tutor);
-        Form.editData(request);
+
+        Form.editData(request, tutor, student);
         Form = new Tableau(tutor);
         request.setAttribute("listEtudiants",Form.getTable());
         request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
@@ -44,4 +46,5 @@ public class Table extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
 
     }
+
 }
