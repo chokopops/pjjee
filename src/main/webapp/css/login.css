@@ -1,0 +1,18 @@
+body,html{
+    height: 100%;
+}
+
+#div_container{
+    background-color: #808080;
+}
+
+#authentification_title{
+    background-color: #378de9;
+}
+
+#rowlogin{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

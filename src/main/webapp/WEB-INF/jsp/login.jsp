@@ -9,18 +9,34 @@
 <html>
 <head>
     <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-
-    <form name="loginFormIndex" method="post" action="Login">
-
-        <h1>Hello welcome, please sign in !</h1><br>
-
-        <label> Login : </label> <input type="text" name="loginForm" required/><br/>
-        <label> Password : </label> <input type="password" name="passForm" required/> <br/>
-
-        <input type="submit" name="submit" value="Submit"/>
-    </form>
-<a href="/Controller"><button class="Register" type="button" >Register</button></a>
+<div class="row" id="rowlogin">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div id="authentification_title">
+            <h1>Authentification</h1>
+            <br>
+        </div>
+        <form name="loginFormIndex" method="post" id="form_container" action="Login">
+            <div class="form-group">
+                <label> Login : </label> <input type="text" name="loginForm" required/><br/>
+            </div>
+            <div class="form-group">
+                <label> Password : </label> <input type="password" name="passForm" required/> <br/>
+            </div>
+            <input type="submit" name="submit" value="Submit"/>
+        </form>
+        <a href="/Controller"><button type="button" class="btn" >Register</button></a>
+    </div>
+    <div class="col-3"></div>
+</div>
 </body>
 </html>
