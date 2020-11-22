@@ -5,14 +5,6 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>Controller</servlet-name>
-        <servlet-class>ctrl.Controller</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Controller</servlet-name>
-        <url-pattern>/Controller</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>ctrl.Login</servlet-class>
     </servlet>
@@ -59,7 +51,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/WEB-INF/jsp/register.jsp</welcome-file>
+        <welcome-file>/WEB-INF/jsp/login.jsp</welcome-file>
     </welcome-file-list>
     <jsp-config>
         <jsp-property-group>
