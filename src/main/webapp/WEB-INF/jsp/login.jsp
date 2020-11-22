@@ -19,6 +19,9 @@
     <link href="//db.onlinewebfonts.com/c/c38f2cc711985becf7550d75271b1175?family=Neo+Sans+Pro" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<c:if test="${Log==false}"><c:out value="Failed to connect"></c:out> </c:if>
+<c:if test="${Log==true}"><c:out value="You are log"></c:out> </c:if>
+
     <div class="container-fluid">
         <div class="row" id="rowlogin">
             <div class="col-3"></div>
@@ -35,7 +38,8 @@
                     </div>
                     <div class="form-group">
                         <label> Login : </label>
-                        <input type="text" class="form-control" name="loginForm" placeholder="Enter your login" required/>
+                        <c:if test="${log==null}"><input type="text" class="form-control" name="loginForm" placeholder="Enter your login" required/></c:if>
+                        <c:if test="${log!=null}"><input type="text" class="form-control" name="loginForm" value="${log}" required/></c:if>
                     </div>
                     <div class="form-group">
                         <label> Password : </label>
