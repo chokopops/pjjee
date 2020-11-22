@@ -13,6 +13,9 @@
 <c:if test="${ !empty sessionScope.idtutor}">
     <p>Id Tutor ${ sessionScope.idtutor } !</p>
 </c:if>
+<form name="LogOut" method="post" action="Logout">
+    <td><input type="submit" name="detail" value="Log Out"/></td>
+</form>
 <c:forEach items="${listEtudiant}" var="Etudiant">
     <div>
         <table>

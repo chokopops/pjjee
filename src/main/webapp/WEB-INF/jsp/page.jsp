@@ -17,6 +17,9 @@
     <td><input type="text" name="search" /></td>
     <td><input type="submit" name="search" value="Search"/></td>
 </form>
+<form name="LogOut" method="post" action="Logout">
+    <td><input type="submit" name="detail" value="Log Out"/></td>
+</form>
     <table>
         <tr>
             <td>Group</td>

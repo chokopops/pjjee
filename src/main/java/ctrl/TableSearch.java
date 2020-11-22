@@ -28,7 +28,14 @@ public class TableSearch extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/Table");
+        HttpSession session = request.getSession();
+        if (session.getAttribute("idtutor")!=null){
+            response.sendRedirect("/Table");
+        }
+        else{
+            response.sendRedirect("/Login");
+        }
+
     }
 
     public Tableau search(Tableau Tab, String search){

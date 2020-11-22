@@ -24,6 +24,12 @@ public class Detail extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
+        if (session.getAttribute("idtutor")!=null){
+            response.sendRedirect("/Table");
+        }
+        else{
+            response.sendRedirect("/Login");
+        }
     }
 }

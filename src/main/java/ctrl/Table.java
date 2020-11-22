@@ -39,11 +39,17 @@ public class Table extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        int tutor = (int) session.getAttribute("idtutor");
-        Tableau TabStud = new Tableau(tutor);
+        if (session.getAttribute("idtutor")!=null){
+            int tutor = (int) session.getAttribute("idtutor");
+            Tableau TabStud = new Tableau(tutor);
 
-        request.setAttribute("listEtudiants",TabStud.getTable());
-        request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
+            request.setAttribute("listEtudiants",TabStud.getTable());
+            request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
+        }
+        else{
+            response.sendRedirect("/Login");
+        }
+
 
     }
 

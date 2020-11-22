@@ -44,6 +44,14 @@
         <servlet-name>TableSearch</servlet-name>
         <url-pattern>/TableSearch</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>ctrl.Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>
