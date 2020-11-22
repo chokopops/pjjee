@@ -1,13 +1,35 @@
-body,html{
+body{
     height: 100%;
 }
 
-#div_container{
-    background-color: #808080;
+#form_container{
+    background-color: #ffffff;
+}
+
+.form-group{
+    margin: 5px;
+}
+
+#btn_submit{
+    margin: 5px;
+}
+
+h2{
+    color: #e5dcdc;
+    font-family: "Berlin Sans FB";
 }
 
 #authentification_title{
     background-color: #378de9;
+}
+
+img{
+    height: 100%;
+    width: 50%;
+}
+
+.form-row{
+    margin: 0px;
 }
 
 #rowlogin{
@@ -15,4 +37,8 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: url("/images/bureau.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
 }
