@@ -16,27 +16,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/login.css">
+    <link href="//db.onlinewebfonts.com/c/c38f2cc711985becf7550d75271b1175?family=Neo+Sans+Pro" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div class="row" id="rowlogin">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <div id="authentification_title">
-            <h1>Authentification</h1>
-            <br>
+    <div class="container-fluid">
+        <div class="row" id="rowlogin">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form name="loginFormIndex" method="post" class="shadow" id="form_container" action="Login">
+                    <div class="form-row" id="authentification_title">
+                        <div class="form-group col-md-4">
+                            <img src="/images/efrei.jpg">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <h2>Authentification</h2>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    <div class="form-group">
+                        <label> Login : </label>
+                        <input type="text" class="form-control" name="loginForm" placeholder="Enter your login" required/>
+                    </div>
+                    <div class="form-group">
+                        <label> Password : </label>
+                        <input type="password" class="form-control" name="passForm" placeholder="Enter your password" required/>
+                    </div>
+                    <div class="form-group">
+                        <center><input type="submit" name="submit" class="btn btn-primary" id="btn_submit" value="Submit"/></center>
+                    </div>
+                </form>
+            </div>
+            <div class="col-3"></div>
         </div>
-        <form name="loginFormIndex" method="post" id="form_container" action="Login">
-            <div class="form-group">
-                <label> Login : </label> <input type="text" name="loginForm" required/><br/>
-            </div>
-            <div class="form-group">
-                <label> Password : </label> <input type="password" name="passForm" required/> <br/>
-            </div>
-            <input type="submit" name="submit" value="Submit"/>
-        </form>
-        <a href="/Controller"><button type="button" class="btn" >Register</button></a>
     </div>
-    <div class="col-3"></div>
-</div>
 </body>
 </html>
