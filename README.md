@@ -1,66 +1,83 @@
-# pjjee
+create table TUTOR
+(
+    ID_TUTOR       INTEGER auto_increment,
+    FIRSTNAME_PROF VARCHAR(25),
+    LASTNAME_PROF  VARCHAR(255),
+    LOGIN_PROF     VARCHAR(255),
+    PWD_PROF       VARCHAR(255),
+    constraint PK_TUTOR
+        primary key (ID_TUTOR)
+);
 
-DROP TABLE VISITE;
-DROP TABLE TUTOR;
-DROP TABLE STUDENT;
-DROP TABLE STAGE;
-DROP TABLE DOC;
-DROP TABLE ENTREPRISE;
+create table DOC
+(
+    ID_DOC     INTEGER auto_increment,
+    CDC        BOOLEAN,
+    FICHE_EVAL BOOLEAN,
+    SONDAGE    BOOLEAN,
+    RAPPORT    BOOLEAN,
+    SOUTENANCE BOOLEAN,
+    constraint PK_DOC
+        primary key (ID_DOC)
+);
 
-CREATE TABLE "VISITE" ("ID_VISITE" INTEGER NOT NULL AUTO_INCREMENT,
-                      "FICHE_VISITE" BOOLEAN,
-                      "PLANNIF" BOOLEAN,
-                      "FAITE" BOOLEAN,
-                      "ID_TUTOR" INTEGER,
-                      "ID_STUDENT" INTEGER,
-                       CONSTRAINT FK_TUTOR_VISITE FOREIGN KEY (ID_TUTOR) REFERENCES TUTOR(ID_TUTOR),
-                       CONSTRAINT FK_STUDENT_VISITE FOREIGN KEY (ID_STUDENT) REFERENCES STUDENT(ID_STUDENT),
-                       CONSTRAINT PK_VISITE PRIMARY KEY (ID_VISITE)
-                      ); //INSERT INTO VISITE(FICHE_VISITE,PLANNIF,FAITE,ID_TUTOR,ID_STUDENT);
+create table ENTREPRISE
+(
+    ID_ENTREPRISE   INTEGER auto_increment,
+    NAME_ENTREPRISE VARCHAR(10),
+    ADRESSE         VARCHAR(60),
+    constraint PK_ENTREPRISE
+        primary key (ID_ENTREPRISE)
+);
 
-CREATE TABLE "TUTOR" ("ID_TUTOR" INTEGER NOT NULL AUTO_INCREMENT,
-                        "FIRSTNAME_PROF" VARCHAR(25),
-                        "LASTNAME_PROF" VARCHAR(255),
-                        "LOGIN_PROF" VARCHAR(255),
-                        "PWD_PROF" VARCHAR(255),
-                      CONSTRAINT PK_TUTOR PRIMARY KEY (ID_TUTOR)
-                        ); //INSERT INTO TUTOR(FIRSTNAME_PROF,LASTNAME_PROF,LOGIN_PROF, PWD_PROF);
+create table STUDENT
+(
+    ID_STUDENT        INTEGER auto_increment,
+    FIRSTNAME_STUDENT VARCHAR(25),
+    LASTNAME_STUDENT  VARCHAR(25),
+    GROUP_STUDENT     VARCHAR(10),
+    ID_TUTOR          INTEGER,
+    ID_DOC            INTEGER,
+    constraint PK_STUDENT
+        primary key (ID_STUDENT),
+    constraint FK_DOC
+        foreign key (ID_DOC) references DOC (ID_DOC),
+    constraint FK_TUTOR
+        foreign key (ID_TUTOR) references TUTOR (ID_TUTOR)
+);
 
-CREATE TABLE "STUDENT" ("ID_STUDENT" INTEGER NOT NULL AUTO_INCREMENT,
-                        "FIRSTNAME_STUDENT" VARCHAR(25),
-                        "LASTNAME_STUDENT" VARCHAR(25),
-                        "GROUP" VARCHAR(10),
-                        "ID_TUTOR" INTEGER,
-                        "ID_DOC" INTEGER,
-                        CONSTRAINT FK_TUTOR FOREIGN KEY (ID_TUTOR) REFERENCES TUTOR(ID_TUTOR),
-                        CONSTRAINT FK_DOC FOREIGN KEY (ID_DOC) REFERENCES DOC(ID_DOC),
-                        CONSTRAINT PK_STUDENT PRIMARY KEY (ID_STUDENT)
-                       ); //INSERT INTO STUDENT(FIRSTNAME_STUDENT,LASTNAME_STUDENT, GROUP,ID_TUTOR,ID_DOC);
+create table STAGE
+(
+    ID_STAGE            INTEGER auto_increment,
+    DEBUT               DATETIME,
+    FIN                 DATETIME,
+    MDS                 VARCHAR(10),
+    NOTE_TECH           INTEGER,
+    NOTE_COM            INTEGER,
+    ID_ENTERPRISE       INTEGER,
+    ID_STUDENT          INTEGER,
+    DESCRIPTION_MISSION VARCHAR default NULL,
+    COMMENTAIRE         VARCHAR default NULL,
+    constraint PK_STAGE
+        primary key (ID_STAGE),
+    constraint FK_ENTREPRISE
+        foreign key (ID_ENTERPRISE) references ENTREPRISE (ID_ENTREPRISE),
+    constraint FK_STUDENT
+        foreign key (ID_STUDENT) references STUDENT (ID_STUDENT)
+);
 
-CREATE TABLE "DOC" ("ID_DOC" INTEGER NOT NULL AUTO_INCREMENT,
-                    "CDC" BOOLEAN,
-                    "FICHE_EVAL" BOOLEAN,
-                    "SONDAGE" BOOLEAN,
-                    "RAPPORT" BOOLEAN,
-                    "SOUTENANCE" BOOLEAN,
-                    CONSTRAINT PK_DOC PRIMARY KEY (ID_DOC)
-                    ); //INSERT INTO DOC(CDC, FICHE_EVAL, SONDAGE, RAPPORT, SOUTENANCE);
-
-CREATE TABLE "STAGE" ("ID_STAGE" INTEGER NOT NULL AUTO_INCREMENT,
-                      "DEBUT" DATETIME,
-                      "FIN" DATETIME,
-                      "MDS" VARCHAR(10),
-                      "NOTE_TECH" INTEGER,
-                      "NOTE_COM" INTEGER,
-                      "ID_ENTERPRISE" INTEGER,
-                      "ID_STUDENT" INTEGER,
-                    CONSTRAINT FK_STUDENT FOREIGN KEY (ID_STUDENT) REFERENCES STUDENT(ID_STUDENT),
-                    CONSTRAINT FK_ENTREPRISE FOREIGN KEY (ID_ENTERPRISE) REFERENCES ENTREPRISE(ID_ENTREPRISE),
-                    CONSTRAINT PK_STAGE PRIMARY KEY (ID_STAGE)
-                    ); //INSERT INTO STAGE(DEBUT, FIN, SONDAGE, MDS, NOTE_TECH, NOTE_COM,ID_ENTERPRISE,ID_STUDENT);
-
-CREATE TABLE "ENTREPRISE" ("ID_ENTREPRISE" INTEGER NOT NULL AUTO_INCREMENT,
-                      "NAME_ENTREPRISE" VARCHAR(10),
-                      "ADRESSE" VARCHAR(60),
-                      CONSTRAINT PK_ENTREPRISE PRIMARY KEY (ID_ENTREPRISE)
-                    ); //INSERT INTO ENTREPRISE(NAME_ENTREPRISE, ADRESSE);
+create table VISITE
+(
+    ID_VISITE    INTEGER auto_increment,
+    FICHE_VISITE BOOLEAN,
+    PLANNIF      BOOLEAN,
+    FAITE        BOOLEAN,
+    ID_TUTOR     INTEGER,
+    ID_STUDENT   INTEGER,
+    constraint PK_VISITE
+        primary key (ID_VISITE),
+    constraint FK_STUDENT_VISITE
+        foreign key (ID_STUDENT) references STUDENT (ID_STUDENT),
+    constraint FK_TUTOR_VISITE
+        foreign key (ID_TUTOR) references TUTOR (ID_TUTOR)
+);
