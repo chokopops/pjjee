@@ -52,13 +52,10 @@
     <div>
         <table>
             <tr>
-                <td>Description de la mission : </td>
+                <td>Description de la mission : ${Etudiant.getStudentStage().getDescriptionStage()}</td>
             </tr>
             <tr>
-                <td>Commentaire : </td>
-            </tr>
-            <tr>
-                <td>Remplir la fiche de visite : </td>
+                <td>Commentaire : ${Etudiant.getStudentStage().getCommentaire()} </td>
             </tr>
         </table>
     </div>

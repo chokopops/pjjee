@@ -33,7 +33,7 @@ public class TableSearch extends HttpServlet {
 
     public Tableau search(Tableau Tab, String search){
         boolean searchFound;
-        String pattern = "yyyy-dd-MM HH:mm:ss";
+        String pattern = "yyyy-MM-dd HH:mm:ss";
         DateFormat df = new SimpleDateFormat(pattern);
 
 
@@ -72,6 +72,7 @@ public class TableSearch extends HttpServlet {
             else if (((Tab.getTable().get(i).getStudentEnterprise().getAdresse().toUpperCase()).contains(search.toUpperCase())) && (searchFound==false)){
                 searchFound = true;
             }
+
 
             if (searchFound == false){
                 Tab.getTable().remove(i);

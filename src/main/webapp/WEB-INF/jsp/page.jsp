@@ -43,8 +43,8 @@
                 <tr>
                     <form name="TableFormIndex" method="post" action="Table">
                         <input type="hidden" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
-                    <td>${aEtudiant.getStudentInfo().getGroup()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentInfo().getLastname()}</td><!-- String -->
+                    <td><input type="text" name="GroupStudent" value="${aEtudiant.getStudentInfo().getGroup()}" /></td><!-- String -->
+                    <td><input type="text" name="LastNameStudent" value="${aEtudiant.getStudentInfo().getLastname()}" /></td><!-- String -->
                     <td>
                         <input type="checkbox" id="cdc" name="cdc"
                         <c:if test="${aEtudiant.getStudentDoc().isCdc() == true }">
@@ -117,13 +117,13 @@
                             />
                         </c:if>
                     </td><!-- String -->
-                    <td>${aEtudiant.getStudentStage().getDebut()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentStage().getFin()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentEnterprise().getNom()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentStage().getMds()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentEnterprise().getAdresse()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentStage().getNoteTech()}</td><!-- String -->
-                    <td>${aEtudiant.getStudentStage().getNoteCom()}</td><!-- String -->
+                    <td><input type="text" name="Debut" value="${aEtudiant.getStudentStage().getDebut()}" /></td><!-- String -->
+                    <td><input type="text" name="Fin" value="${aEtudiant.getStudentStage().getFin()}" /></td><!-- String -->
+                    <td><input type="text" name="NomEntreprise" value="${aEtudiant.getStudentEnterprise().getNom()}" /></td><!-- String -->
+                    <td><input type="text" name="Mds" value="${aEtudiant.getStudentStage().getMds()}" /></td><!-- String -->
+                    <td><input type="text" name="AdresseEntreprise" value="${aEtudiant.getStudentEnterprise().getAdresse()}" /></td><!-- String -->
+                    <td><input type="text" name="NoteTech" value="${aEtudiant.getStudentStage().getNoteTech()}" /></td><!-- String -->
+                    <td><input type="text" name="NoteCom" value="${aEtudiant.getStudentStage().getNoteCom()}" /></td><!-- String -->
                     <td><input type="submit" name="submit" value="Valid Edit"/></td>
                         <c:set var="count" value="${count + 1}" scope="session"/>
                     </form>

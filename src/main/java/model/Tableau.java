@@ -1,13 +1,14 @@
 package model;
 
 import ctrl.DataServices;
-import javafx.scene.control.Tab;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static utils.Constant.*;
 
@@ -84,6 +85,15 @@ public class Tableau {
     public void editData(HttpServletRequest request, int id_tutor, int id_student){
         conn = DataServices.connect(conn);
         try{
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            Date parsed = format.parse(request.getParameter("Debut"));
+            Date parsed2 = format.parse(request.getParameter("Fin"));
+
+            java.sql.Date Debut = new java.sql.Date(parsed.getTime());
+            java.sql.Date Fin = new java.sql.Date(parsed2.getTime());
+
+            System.out.println(request.getParameter("Debut"));
+            System.out.println();
 
             Boolean cdc = verifBool(request.getParameter("cdc"));
             Boolean fiche_visite = verifBool(request.getParameter("fiche_visite"));
@@ -93,6 +103,18 @@ public class Tableau {
             Boolean soutenance = verifBool(request.getParameter("soutenance"));
             Boolean plannif = verifBool(request.getParameter("plannif"));
             Boolean faite = verifBool(request.getParameter("faite"));
+
+            String LastNameStudent = request.getParameter("LastNameStudent");
+            String AdresseEntreprise = request.getParameter("AdresseEntreprise");
+            String Mds = request.getParameter("Mds");
+            String NomEntreprise = request.getParameter("NomEntreprise");
+            String GroupStudent = request.getParameter("GroupStudent");
+
+            int NoteTech = Integer.parseInt(request.getParameter("NoteTech"));
+            int NoteCom = Integer.parseInt(request.getParameter("NoteCom"));
+
+            //Date Debut = df.parse(request.getParameter("Debut"));
+            //Date Fin = df.parse(request.getParameter("Fin"));
 
             System.out.println(cdc);
             System.out.println(fiche_visite);
@@ -115,7 +137,15 @@ public class Tableau {
             stmt.executeUpdate("UPDATE VISITE SET PLANNIF = '"+ plannif +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT, VISITE WHERE '"+id_student+"' = VISITE.id_student AND VISITE.id_student = STUDENT.id_student AND STUDENT.id_tutor = '"+id_tutor+"' )");
             stmt.executeUpdate("UPDATE VISITE SET FAITE = '"+ faite +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT, VISITE WHERE '"+id_student+"' = VISITE.id_student AND VISITE.id_student = STUDENT.id_student AND STUDENT.id_tutor = '"+id_tutor+"' )");
 
-
+            stmt.executeUpdate("UPDATE STUDENT SET LASTNAME_STUDENT = '"+ LastNameStudent +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE STUDENT SET GROUP_STUDENT = '"+ GroupStudent +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE ENTREPRISE SET NAME_ENTREPRISE = '"+ NomEntreprise +"' WHERE ID_ENTREPRISE = (SELECT ENTREPRISE.id_entreprise FROM ENTREPRISE, STAGE WHERE STAGE.id_student = '"+id_student+"' AND STAGE.id_enterprise = ENTREPRISE.id_entreprise )");
+            stmt.executeUpdate("UPDATE ENTREPRISE SET ADRESSE = '"+ AdresseEntreprise +"' WHERE ID_ENTREPRISE = (SELECT ENTREPRISE.id_entreprise FROM ENTREPRISE, STAGE WHERE STAGE.id_student = '"+id_student+"' AND STAGE.id_enterprise = ENTREPRISE.id_entreprise )");
+            stmt.executeUpdate("UPDATE STAGE SET MDS = '"+ Mds +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE STAGE SET NOTE_TECH = '"+ NoteTech +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE STAGE SET NOTE_COM = '"+ NoteCom +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE STAGE SET DEBUT = '"+ Debut +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE STAGE SET FIN = '"+ Fin +"' WHERE ID_STUDENT = '"+id_student+"'");
 
         }
         catch (Exception e){
@@ -151,7 +181,7 @@ public class Tableau {
             Statement stmt = conn.createStatement();
             ResultSet rs;
             System.out.println("conn good");
-            rs = stmt.executeQuery("SELECT STUDENT.id_student, STUDENT.group_student, STUDENT.lastname_student, STUDENT.firstname_student, ENTREPRISE.name_entreprise, ENTREPRISE.adresse, STAGE.mds, STAGE.debut, STAGE.fin FROM STUDENT, ENTREPRISE, STAGE WHERE STUDENT.ID_TUTOR = '"+id_tutor+"' AND STAGE.ID_STUDENT = STUDENT.ID_STUDENT AND ENTREPRISE.ID_ENTREPRISE = STAGE.ID_ENTERPRISE AND STUDENT.id_student = '"+ id_student +"'");
+            rs = stmt.executeQuery("SELECT STAGE.description_mission, STAGE.commentaire, STUDENT.id_student, STUDENT.group_student, STUDENT.lastname_student, STUDENT.firstname_student, ENTREPRISE.name_entreprise, ENTREPRISE.adresse, STAGE.mds, STAGE.debut, STAGE.fin FROM STUDENT, ENTREPRISE, STAGE WHERE STUDENT.ID_TUTOR = '"+id_tutor+"' AND STAGE.ID_STUDENT = STUDENT.ID_STUDENT AND ENTREPRISE.ID_ENTREPRISE = STAGE.ID_ENTERPRISE AND STUDENT.id_student = '"+ id_student +"'");
             while ( rs.next() ) {
 
                 StudentInfo = new Student();
@@ -159,6 +189,8 @@ public class Tableau {
                 StudentEnterprise = new Entreprise();
                 StudentStage = new Stage();
                 StudentVisite = new Visite();
+                StudentStage.setDescriptionStage(rs.getString("STAGE.description_mission"));
+                StudentStage.setCommentaire(rs.getString("STAGE.commentaire"));
                 StudentInfo.setIdStudent(rs.getInt("STUDENT.ID_student"));
                 StudentInfo.setGroup(rs.getString("STUDENT.group_student"));
                 StudentInfo.setLastname(rs.getString("STUDENT.lastname_student"));

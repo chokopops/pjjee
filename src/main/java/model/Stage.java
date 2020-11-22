@@ -7,6 +7,8 @@ public class Stage {
     private Date debut = null;
     private Date fin = null;
     private String mds = "";
+    private String DescriptionStage = "";
+    private String Commentaire = "";
     private int idEntreprise;
     private int idStudent;
     private int noteTech;
@@ -68,4 +70,19 @@ public class Stage {
         this.noteCom = noteCom;
     }
 
+    public String getDescriptionStage() {
+        return DescriptionStage;
+    }
+
+    public void setDescriptionStage(String descriptionStage) {
+        DescriptionStage = descriptionStage;
+    }
+
+    public String getCommentaire() {
+        return Commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        Commentaire = commentaire;
+    }
 }
