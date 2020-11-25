@@ -103,6 +103,8 @@
                             <td>Entreprise adresse</td>
                             <td>Note technique</td>
                             <td>Notet com</td>
+                            <td>Edit</td>
+                            <td>Details</td>
                         </tr>
                         <c:set var="count" value="0" scope="session" />
                         <c:forEach items="${listEtudiants}" var="aEtudiant">
