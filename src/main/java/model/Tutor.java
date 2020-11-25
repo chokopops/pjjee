@@ -61,6 +61,8 @@ public class Tutor
             Statement stmt = conn.createStatement();
             ResultSet rs;
             System.out.println("conn good");
+            System.out.println(login);
+            System.out.println(pwd);
             rs = stmt.executeQuery("SELECT ID_TUTOR, LOGIN_PROF, PWD_PROF, FIRSTNAME_PROF, LASTNAME_PROF FROM TUTOR WHERE LOGIN_PROF='"+login+"'");
             while ( rs.next() ) {
                 if ((rs.getString("PWD_PROF")).equals(pwd)){
@@ -71,7 +73,7 @@ public class Tutor
                     System.out.println("log et mail good");
                 }
             }
-            if (resultat!= loginSuccess){
+            if (resultat != loginSuccess){
                 resultat = loginFail;
             }
 
@@ -86,7 +88,6 @@ public class Tutor
     }
 
     public boolean verifLogin(String login, Connection conn){
-
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs;
