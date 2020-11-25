@@ -5,7 +5,7 @@
   Time: 17:04
   To change this template use File | Settings | File Templates.
 --%>
-<<<<<<< Updated upstream
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -36,15 +36,55 @@
             </div>
         </nav>
         <div class="container-fluid">
+            <br/>
             <center>
-                <form id="searchForm" name="Recherche" method="post" action="TableSearch">
-                    <td><input type="text" name="search"/></td>
-                    <td><input type="submit" name="search" value="Search"/></td>
+                <form name="Recherche" method="post" action="TableSearch">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-search h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-md form-control-borderless" type="search" placeholder="Search" name="search">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-success " name="search" style="margin-left: 10px" type="submit">Search</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
                 </form>
             </center>
             <center>
-                <div class="table-responsive shadow p-3 mb-5 bg-white rounded" id="studentTable">
-                    <table class="table table-striped">
+                <div class="table-responsive shadow p-3 mb-5 bg-white rounded" id="tutorPage">
+                    <div class="row">
+                        <div class="p-2 mr-auto">
+                            <h3>Extranet pour les tuteurs</h3>
+                        </div>
+                        <div class="p-2">
+                            <img src="/images/efrei.jpg">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4 mr-auto">
+                            <img src="/images/efrei.jpg">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Bienvenue sur le portail tuteur</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
+                        </div>
+                    </div>
+
+                    <table class="table table-striped" id="studentTable">
+                        <h4>Liste des étudiants</h4>
                         <tr>
                             <td>Groupe</td>
                             <td>Nom</td>
@@ -183,6 +223,7 @@
                                 </form>
                             </tr>
                         </c:forEach>
+                        </tbody>
                     </table>
                 </div>
             </center>

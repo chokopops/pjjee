@@ -9,11 +9,17 @@ body{
     color: #ffffff;
 }
 
+p{
+    text-align: left;
+}
 
-#studentTable{
+#tutorPage{
     width: 80%;
     height: 80%;
     background-color: #fdf1f1;
+}
+
+#studentTable{
     overflow-y: auto;
 }
 
@@ -30,6 +36,15 @@ img{
 #searchForm{
     margin-top: 10px;
 }
+
+table{
+    display: block;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+/* css for the custom checkbox*/
 
 .custom-checkbox {
     min-height: 1rem;
@@ -77,4 +92,16 @@ img{
 }
 .custom-checkbox .custom-control-input:focus ~ .custom-control-indicator {
     box-shadow: none !important;
+}
+
+/*search bar*/
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
