@@ -7,6 +7,7 @@ body{
 #navbar{
     background-color: #1b70ca;
     color: #ffffff;
+    height: 60px;
 }
 
 p{
@@ -19,9 +20,22 @@ p{
     background-color: #fdf1f1;
 }
 
-img{
-    height: 10%;
-    width: 10%;
+#efreinavbar{
+    height: 15%;
+    width: 15%;
+    overflow: hidden;
+}
+
+#efrei2{
+    height: 40px;
+    width: 80%;
+    overflow: hidden;
+}
+
+#logo1{
+    height: 154px;
+    width: 60%;
+    overflow: hidden;
 }
 
 #navbarText{
@@ -30,7 +44,7 @@ img{
 }
 
 #searchForm{
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 table{

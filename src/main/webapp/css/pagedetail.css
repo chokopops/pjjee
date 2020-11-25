@@ -1,71 +1,62 @@
 body{
+    background: url("/images/bureau.jpg") no-repeat center center fixed;
+    background-size: cover;
+
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
+
 h1{
     color: dodgerblue;
 }
 
-h2{
-    padding: 10px;
-    background-color: lightgrey;
-    font-size: 30px;
+#contenanttableaux{
+    width: 80%;
+    height: 90%;
+    background-color: #fdf1f1;
 }
-.contain{
-    border: 1px solid black;
-    padding:30px ;
+
+#tablestagiaire{
+    width: 250px;
+    overflow-x: auto;
+    overflow-y: auto;
 }
+
+#tableentreprise{
+    width: 400px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+#tablestage{
+    width: 600px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
 
 #authentification_title{
     background-color: #378de9;
 }
 
-table{
-    background-color: white;
+#efrei2{
+    height: 40px;
+    width: 80%;
+    overflow: hidden;
 }
-tr{
-
-}
-
-td{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.54);
-}
-
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+#navbar{
+    background-color: #1b70ca;
+    color: #ffffff;
+    height: 60px;
 }
 
-.col-md-9{
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    border: 1px solid lightgrey;
-}
-.col-md-4{
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    border: 1px solid lightgrey;
-    margin-bottom: 10px;
-
-
-}
-.col-md-7{
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
-    border: 1px solid lightgrey;
-    margin-bottom: 10px;
+#efreinavbar{
+    height: 15%;
+    width: 15%;
+    overflow: hidden;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+#navbarText{
+    margin-left: 10px;
+    margin-right: 10px;
 }

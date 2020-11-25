@@ -22,7 +22,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
             <div class="p-2 mr-auto">
-                <img src="/images/efrei.jpg">
+                <img id="efreinavbar" src="/images/efrei.jpg">
             </div>
             <div class="p-2">
                 <c:if test="${ !empty sessionScope.idtutor}">
@@ -69,19 +69,20 @@
                             <h3>Extranet pour les tuteurs</h3>
                         </div>
                         <div class="p-2">
-                            <img src="/images/efrei.jpg">
+                            <img id="efrei2" src="/images/efrei2.jpg">
                         </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-md-4 mr-auto">
-                            <img src="/images/efrei.jpg">
+                            <img id="logo1" src="/images/logo1.jpg">
                         </div>
                         <div class="col-md-8">
                             <h3>Bienvenue sur le portail tuteur</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
                         </div>
                     </div>
+                    <hr>
 
                     <table class="table table-striped" id="studentTable">
                         <h4>Liste des étudiants</h4>
