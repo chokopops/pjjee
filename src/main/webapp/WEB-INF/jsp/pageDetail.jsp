@@ -23,68 +23,77 @@
 <form name="LogOut" method="post" action="Logout">
     <td><input type="submit" name="detail" value="Log Out"/></td>
 </form>
-<div class="container-fluid">
-    <div class="row" id="rowlogin">
-        <div class="col-5">
+
 <c:forEach items="${listEtudiant}" var="Etudiant">
 
-    <div>
-        <table class="table">
-            <tr>
-                <td>Identifiant : ${Etudiant.getStudentInfo().getIdStudent()}</td>
-            </tr>
-            <tr>
-                <td>Nom : ${Etudiant.getStudentInfo().getLastname()}</td>
-            </tr>
-            <tr>
-                <td>Prénom : ${Etudiant.getStudentInfo().getFirstname()}</td>
-            </tr>
-            <tr>
-                <td>Prénom : ${Etudiant.getStudentInfo().getGroup()}</td>
-            </tr>
-        </table>
-    </div>
-        </div>
-        <div class="col-5">
-    <div>
-        <table class="table">
-            <tr>
-                <td>Nom : ${Etudiant.getStudentEnterprise().getNom()}</td>
-            </tr>
-            <tr>
-                <td>Adresse de l'entreprise : ${Etudiant.getStudentEnterprise().getAdresse()}</td>
-            </tr>
-            <tr>
-                <td>Maitre d'apprentissage : ${Etudiant.getStudentStage().getMds()}</td>
-            </tr>
-            <tr>
-                <td>Date de début : ${Etudiant.getStudentStage().getDebut()}</td>
-            </tr>
-            <tr>
-                <td>Date de fin : ${Etudiant.getStudentStage().getFin()}</td>
-            </tr>
-        </table>
-    </div>
-        </div>
-    </div>
-    <div class="row" id="rowlogin">
+    <div class="container">
+        <div class="contain">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Fiche des details</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Details du stagiaire</h2>
+                    <table class="table">
+                        <tr>
+                            <td>Identifiant : ${Etudiant.getStudentInfo().getIdStudent()}</td>
+                        </tr>
+                        <tr>
+                            <td>Nom : ${Etudiant.getStudentInfo().getLastname()}</td>
+                        </tr>
+                        <tr>
+                            <td>Prénom : ${Etudiant.getStudentInfo().getFirstname()}</td>
+                        </tr>
+                        <tr>
+                            <td>Prénom : ${Etudiant.getStudentInfo().getGroup()}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-7">
+                    <h2>Details de l'Entreprise</h2>
+                    <table class="table">
+                        <tr>
+                            <td>Nom : ${Etudiant.getStudentEnterprise().getNom()}</td>
+                        </tr>
+                        <tr>
+                            <td>Adresse de l'entreprise : ${Etudiant.getStudentEnterprise().getAdresse()}</td>
+                        </tr>
+                        <tr>
+                            <td>Maitre d'apprentissage : ${Etudiant.getStudentStage().getMds()}</td>
+                        </tr>
+                        <tr>
+                            <td>Date de début : ${Etudiant.getStudentStage().getDebut()}</td>
+                        </tr>
+                        <tr>
+                            <td>Date de fin : ${Etudiant.getStudentStage().getFin()}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <h2>Gestion du stage</h2>
+                    <table class="table">
+                        <tr>
+                            <td>Description de la mission : ${Etudiant.getStudentStage().getDescriptionStage()}</td>
+                        </tr>
+                        <tr>
+                            <td>Commentaire : ${Etudiant.getStudentStage().getCommentaire()} </td>
+                        </tr>
+                    </table>
 
-        <div class="col-9">
-    <div>
-        <table class="table">
-            <tr>
-                <td>Description de la mission : ${Etudiant.getStudentStage().getDescriptionStage()}</td>
-            </tr>
-            <tr>
-                <td>Commentaire : ${Etudiant.getStudentStage().getCommentaire()} </td>
-            </tr>
-        </table>
+
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-12">
+                    <div class="center">
+                        <a href="/Table"><button type="button" class="btn btn-primary" >Return</button> </a>
+                    </div>
+                </div>
+        </div>
     </div>
-    <a href="/Table"><button class="return" type="button" class="btn btn-primary" id="btn_return" >Return</button> </a>
 </c:forEach>
-        </div>
-        </div>
-
-    </div>
-
 </body>

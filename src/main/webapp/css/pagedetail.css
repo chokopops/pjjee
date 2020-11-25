@@ -1,41 +1,71 @@
 body{
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: dodgerblue;
 }
 
-
-
-#btn_return{
-    margin: 5px;
+h2{
+    padding: 10px;
+    background-color: lightgrey;
+    font-size: 30px;
 }
-
-
+.contain{
+    border: 1px solid black;
+    padding:30px ;
+}
 
 #authentification_title{
     background-color: #378de9;
 }
 
-.table{
+table{
     background-color: white;
 }
-.tr{
+tr{
 
 }
 
-.td{
-    padding: 10px;
-    border: 1px solid black;
+td{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.54);
 }
 
-.form-row{
-    margin: 0px;
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
 
-#rowlogin{
+.col-md-9{
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    border: 1px solid lightgrey;
+}
+.col-md-4{
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    border: 1px solid lightgrey;
+    margin-bottom: 10px;
+
+
+}
+.col-md-7{
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    box-shadow: 5px 5px 5px 0px rgba(219,219,219,1);
+    border: 1px solid lightgrey;
+    margin-bottom: 10px;
+}
+
+.center{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: url("/images/bureau.jpg") no-repeat center center fixed;
-    background-size: cover;
-    overflow: hidden;
+    margin-top: 10px;
 }

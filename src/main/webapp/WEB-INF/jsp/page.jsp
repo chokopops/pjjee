@@ -5,6 +5,7 @@
   Time: 17:04
   To change this template use File | Settings | File Templates.
 --%>
+<<<<<<< Updated upstream
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
