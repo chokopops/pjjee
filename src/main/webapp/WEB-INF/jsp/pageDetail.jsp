@@ -6,8 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Title</title>
+    <title>Detail</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/pagedetail.css">
+    <link href="//db.onlinewebfonts.com/c/c38f2cc711985becf7550d75271b1175?family=Neo+Sans+Pro" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <c:if test="${ !empty sessionScope.idtutor}">
@@ -16,9 +23,13 @@
 <form name="LogOut" method="post" action="Logout">
     <td><input type="submit" name="detail" value="Log Out"/></td>
 </form>
+<div class="container-fluid">
+    <div class="row" id="rowlogin">
+        <div class="col-5">
 <c:forEach items="${listEtudiant}" var="Etudiant">
+
     <div>
-        <table>
+        <table class="table">
             <tr>
                 <td>Identifiant : ${Etudiant.getStudentInfo().getIdStudent()}</td>
             </tr>
@@ -33,8 +44,10 @@
             </tr>
         </table>
     </div>
+        </div>
+        <div class="col-5">
     <div>
-        <table>
+        <table class="table">
             <tr>
                 <td>Nom : ${Etudiant.getStudentEnterprise().getNom()}</td>
             </tr>
@@ -52,8 +65,13 @@
             </tr>
         </table>
     </div>
+        </div>
+    </div>
+    <div class="row" id="rowlogin">
+
+        <div class="col-9">
     <div>
-        <table>
+        <table class="table">
             <tr>
                 <td>Description de la mission : ${Etudiant.getStudentStage().getDescriptionStage()}</td>
             </tr>
@@ -62,6 +80,11 @@
             </tr>
         </table>
     </div>
-    <a href="/Table"><button class="return" type="button" >Return</button></a>
+    <a href="/Table"><button class="return" type="button" class="btn btn-primary" id="btn_return" >Return</button> </a>
 </c:forEach>
+        </div>
+        </div>
+
+    </div>
+
 </body>

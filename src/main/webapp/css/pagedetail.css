@@ -1,0 +1,41 @@
+body{
+    height: 100%;
+}
+
+
+
+#btn_return{
+    margin: 5px;
+}
+
+
+
+#authentification_title{
+    background-color: #378de9;
+}
+
+.table{
+    background-color: white;
+}
+.tr{
+
+}
+
+.td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.form-row{
+    margin: 0px;
+}
+
+#rowlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url("/images/bureau.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
