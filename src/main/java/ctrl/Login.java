@@ -21,12 +21,12 @@ public class Login extends HttpServlet {
             request.setAttribute("log",log);
             if (Form.getResultat().equals(loginSuccess)){//If login succeed you go to login page
                 Log = true;
-                HttpSession session = request.getSession();
+                HttpSession session = request.getSession(); //creation of the session object which will handle every session data
                 session.setAttribute("idtutor", Form.getIdTutor());
                 request.setAttribute("Log", Log);
                 response.sendRedirect("/Table");
             }
-            else{//If login failed you stay on register page
+            else{//If login failed you stay on login page
                 Log = false;
                 request.setAttribute("Log", Log);
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);

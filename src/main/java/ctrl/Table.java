@@ -22,14 +22,16 @@ public class Table extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
 
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+
+        // getting session data
+
         int tutor = (int) session.getAttribute("idtutor");
         int student = Integer.parseInt(request.getParameter("id_student"));
-        Tableau Form = new Tableau(tutor);
+        Tableau Form = new Tableau(tutor); // creation of the Table object
 
         Form.editData(request, tutor, student);
         Form = new Tableau(tutor);
@@ -39,12 +41,15 @@ public class Table extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+
+        //get the session attribute to display data
+
         if (session.getAttribute("idtutor")!=null){
             int tutor = (int) session.getAttribute("idtutor");
             Tableau TabStud = new Tableau(tutor);
 
             request.setAttribute("listEtudiants",TabStud.getTable());
-            request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/jsp/page.jsp").forward(request, response); // giving the url to redirect
         }
         else{
             response.sendRedirect("/Login");

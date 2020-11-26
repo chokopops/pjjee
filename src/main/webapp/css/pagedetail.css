@@ -9,24 +9,7 @@ h1{
     color: dodgerblue;
 }
 
-#navbar{
-    background-color: #1b70ca;
-    color: #ffffff;
-    height: 60px;
-}
-
-.navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-}
-
 #efreinavbar{
-    height: 75%;
+    height: 60%;
     width: 15%;
-}
-
-#navbarText{
-    margin-left: 10px;
-    margin-right: 10px;
 }

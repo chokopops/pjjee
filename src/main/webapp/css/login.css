@@ -32,6 +32,8 @@ img{
     margin: 0px;
 }
 
+/* css to center the form vetically and horizontally */
+
 #rowlogin{
     height: 100%;
     display: flex;

@@ -20,11 +20,12 @@
         <link href="//db.onlinewebfonts.com/c/c38f2cc711985becf7550d75271b1175?family=Neo+Sans+Pro" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+    <!-- navbar using bootstrap with a centered element and others displayed left and right -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><img id="efreinavbar" src="/images/efrei.jpg"></a>
+                        <a class="nav-link" href="#"><img id="efreinavbar1" src="/images/efrei.jpg"></a>
                     </li>
                 </ul>
             </div>
@@ -34,6 +35,7 @@
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" style="margin-right: 10px;">
+                        <!-- display the id of the tutor -->
                         <c:if test="${ !empty sessionScope.idtutor}">
                             <p style="color: white">Id Tutor ${ sessionScope.idtutor } !</p>
                         </c:if>
@@ -46,9 +48,11 @@
                 </ul>
             </div>
         </nav>
+    <!-- use of a global container -->
         <div class="container-fluid">
             <br/>
             <center>
+                <!-- search form composed of a search field and a button. will redirect to the search class when the submit button will be pressed -->
                 <form name="Recherche" method="post" action="TableSearch">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-10 col-lg-8">
@@ -73,6 +77,7 @@
                     </div>
                 </form>
             </center>
+            <!-- the container of the tutor student's data -->
             <center>
                 <div class="table-responsive shadow p-3 mb-5 bg-white rounded" id="tutorPage">
                     <div class="row">
@@ -118,6 +123,7 @@
                             <td>Edit</td>
                             <td>Details</td>
                         </tr>
+                        <!-- for each student who will have the tutor id, they will be displayed in the table -->
                         <c:set var="count" value="0" scope="session" />
                         <c:forEach items="${listEtudiants}" var="aEtudiant">
                             <tr>
@@ -136,7 +142,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="fiche_visite"
@@ -148,7 +154,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="fiche_eval"
@@ -160,7 +166,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="sondage"
@@ -172,7 +178,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="rapport"
@@ -184,7 +190,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="soutenance"
@@ -196,7 +202,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="plannif"
@@ -208,7 +214,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="faite"
@@ -220,7 +226,7 @@
                                         </c:if>
                                         <span class="custom-control-indicator"></span>
                                     </label>
-                                </td><!-- String -->
+                                </td>
                                 <td><input class="input-group-text" type="text" size="9" name="Debut" value="${aEtudiant.getStudentStage().getDebut()}" /></td><!-- String -->
                                 <td><input class="input-group-text" type="text" size="9" name="Fin" value="${aEtudiant.getStudentStage().getFin()}" /></td><!-- String -->
                                 <td><input class="input-group-text" type="text" size="10" name="NomEntreprise" value="${aEtudiant.getStudentEnterprise().getNom()}" /></td><!-- String -->

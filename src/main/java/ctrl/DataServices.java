@@ -6,7 +6,7 @@ import static utils.Constant.*;
 
 public class DataServices {
 
-    public static Connection connect(Connection conn){
+    public static Connection connect(Connection conn){ // class which permit the database connection
 
         try {
             Class.forName(JDBC_DRIVER);

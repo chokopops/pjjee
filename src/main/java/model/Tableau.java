@@ -32,6 +32,7 @@ public class Tableau {
         CreateTabDetail(idtutor, id_student);
     }
 
+    //create an arrayList to store data needed to be displayed inside of the main page table
 
     public void CreateTab(int id_tutor){
 
@@ -84,6 +85,8 @@ public class Tableau {
     public void editData(HttpServletRequest request, int id_tutor, int id_student){
         conn = DataServices.connect(conn);
         try{
+            //getting the date data in a particular format
+
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             Date parsed = format.parse(request.getParameter("Debut"));
             Date parsed2 = format.parse(request.getParameter("Fin"));
@@ -93,6 +96,8 @@ public class Tableau {
 
             System.out.println(request.getParameter("Debut"));
             System.out.println();
+
+            //getting the data concerning the choosen student
 
             Boolean cdc = verifBool(request.getParameter("cdc"));
             Boolean fiche_visite = verifBool(request.getParameter("fiche_visite"));
@@ -124,6 +129,7 @@ public class Tableau {
             System.out.println(plannif);
             System.out.println(faite);
 
+            // now we'll update the data stored in the database considering the changes which were done in the table
 
             Statement stmt = conn.createStatement();
 
@@ -167,6 +173,8 @@ public class Tableau {
             return false;
         }
     }
+
+    // creation of the table used for the detail page
 
     public void CreateTabDetail(int id_tutor, int id_student){
         conn = DataServices.connect(conn);

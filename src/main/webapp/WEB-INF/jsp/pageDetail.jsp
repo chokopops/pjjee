@@ -48,6 +48,7 @@
 
         <div class="container-fluid">
             <br>
+            <!-- table which will display the student related information -->
             <c:forEach items="${listEtudiant}" var="Etudiant">
                 <div class="container" id="containertableaux">
                     <div class="row">

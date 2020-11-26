@@ -4,12 +4,6 @@ body{
     background-size: cover;
 }
 
-#navbar{
-    background-color: #1b70ca;
-    color: #ffffff;
-    height: 60px;
-}
-
 p{
     text-align: left;
 }
@@ -20,8 +14,8 @@ p{
     background-color: #fdf1f1;
 }
 
-#efreinavbar{
-    height: 75%;
+#efreinavbar1{
+    height: 60%;
     width: 15%;
 }
 
@@ -35,15 +29,6 @@ p{
     height: 154px;
     width: 60%;
     overflow: hidden;
-}
-
-#navbarText{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-#searchForm{
-    margin-top: 5px;
 }
 
 table{
@@ -114,4 +99,8 @@ table{
     border: none;
     outline: none;
     box-shadow: none;
+}
+
+#searchForm{
+    margin-top: 5px;
 }

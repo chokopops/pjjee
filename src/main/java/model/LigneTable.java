@@ -7,6 +7,8 @@ package model;public class LigneTable {
     private Tutor StudentTutor;
     private Visite StudentVisite;
 
+    //model for the detail page table
+
     public LigneTable(Doc StudentDoc, Entreprise StudentEnterprise, Stage StudentStage, Student StudentInfo, Tutor StudentTutor, Visite StudentVisite){
         setStudentDoc(StudentDoc);
         setStudentEnterprise(StudentEnterprise);

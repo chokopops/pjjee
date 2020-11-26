@@ -41,8 +41,9 @@ public class TableSearch extends HttpServlet {
     public Tableau search(Tableau Tab, String search){
         boolean searchFound;
         String pattern = "yyyy-MM-dd HH:mm:ss";
-        DateFormat df = new SimpleDateFormat(pattern);
+        DateFormat df = new SimpleDateFormat(pattern); // setting a dateformat to search data according to the database
 
+        // searching inside the database to find the searched data according to the entered data
 
         for (int i = 0; i < Tab.getTable().size(); i++){
             searchFound = false;
