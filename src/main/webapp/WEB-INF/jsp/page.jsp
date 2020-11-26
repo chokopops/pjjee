@@ -116,7 +116,7 @@
                                 <td><input class="input-group-text" type="text" size="3" name="LastNameStudent" value="${aEtudiant.getStudentInfo().getLastname()}" /></td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="cdc"
                                         <c:if test="${aEtudiant.getStudentDoc().isCdc() == true }">
                                                checked/>
                                         </c:if>
@@ -128,7 +128,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="fiche_visite"
                                         <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() == true}">
                                                checked/>
                                         </c:if>
@@ -140,7 +140,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="fiche_eval"
                                         <c:if test="${aEtudiant.getStudentDoc().isFicheEval() == true}">
                                                checked/>
                                         </c:if>
@@ -152,7 +152,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="sondage"
                                         <c:if test="${aEtudiant.getStudentDoc().isSondage() == true}">
                                                checked/>
                                         </c:if>
@@ -164,7 +164,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="rapport"
                                         <c:if test="${aEtudiant.getStudentDoc().isRapport() == true}">
                                                checked/>
                                         </c:if>
@@ -176,7 +176,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="soutenance"
                                         <c:if test="${aEtudiant.getStudentDoc().isSoutenance() == true}">
                                                checked/>
                                         </c:if>
@@ -188,7 +188,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="plannif"
                                         <c:if test="${aEtudiant.getStudentVisite().isPlannif() == true}">
                                                checked/>
                                         </c:if>
@@ -200,7 +200,7 @@
                                 </td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
+                                        <input type="checkbox" class="custom-control-input" name="faite"
                                         <c:if test="${aEtudiant.getStudentVisite().isFaite() == true}">
                                                checked/>
                                         </c:if>

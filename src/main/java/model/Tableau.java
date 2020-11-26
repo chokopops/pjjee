@@ -5,7 +5,6 @@ import ctrl.DataServices;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -169,10 +168,6 @@ public class Tableau {
         }
     }
 
-    public ArrayList<LigneTable> getTable(){
-        return Table;
-    }
-
     public void CreateTabDetail(int id_tutor, int id_student){
         conn = DataServices.connect(conn);
 
@@ -212,6 +207,8 @@ public class Tableau {
             System.out.println(e);
         }
     }
-
+    public ArrayList<LigneTable> getTable(){
+        return Table;
+    }
 
 }

@@ -3,54 +3,23 @@ package model;
 import ctrl.DataServices;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 import static utils.Constant.*;
-import static utils.Constant.registerFailEmail;
 
 public class Tutor
 {
-   // private final int idTutor;
     private String login = "";
     private String pwd = "";
     private int idtutor;
     private String firstName = "";
     private String lastName = "";
-    private static int compteurId;
     private String resultat = "";
 
     public Tutor(){
     }
 
-    public void setAccount(HttpServletRequest request){
-        resultat = null;
-        conn = DataServices.connect(conn);//Call methode connect of Dataservices to connect to our database
-        login = request.getParameter("loginForm");
-
-        if (!verifLogin(login, conn)){//If we don't have already the mail
-            firstName = request.getParameter("firstnameForm");
-            lastName = request.getParameter("lastnameForm");
-            pwd = request.getParameter("passForm");
-
-            try{
-                String query = " insert into TUTOR (LOGIN_PROF, FIRSTNAME_PROF, LASTNAME_PROF, PWD_PROF) values ('"+login+"','"+firstName+"', '"+lastName+"', '"+pwd+"')";
-                PreparedStatement preparedStmt = conn.prepareStatement(query);
-                preparedStmt.execute();
-                resultat = registerSuccess;
-            }
-            catch (Exception e){
-                System.out.println(e);
-                resultat = registerFail;
-            }
-        }
-        else{
-            resultat = registerFailEmail;
-        }
-
-    }
     public void verifAccount(HttpServletRequest request){
         resultat = null;
         conn = DataServices.connect(conn);
@@ -85,26 +54,6 @@ public class Tutor
 
 
 
-    }
-
-    public boolean verifLogin(String login, Connection conn){
-        try{
-            Statement stmt = conn.createStatement();
-            ResultSet rs;
-
-            rs = stmt.executeQuery("SELECT LOGIN_PROF FROM TUTOR WHERE LOGIN_PROF='"+login+"'");
-            while ( rs.next() ) {
-                if ((rs.getString("LOGIN_PROF")).equals(login)){
-                    return true;
-                }
-            }
-
-        }
-        catch (Exception e){
-            System.out.println(e);
-            resultat = registerFail;
-        }
-        return false;
     }
 
     public String getResultat(){

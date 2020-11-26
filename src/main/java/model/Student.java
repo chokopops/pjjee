@@ -16,7 +16,6 @@ public class Student
     private String group = "";
     private int idTutor;
     private int idDoc;
-    private String resultat = "";
 
     public Student()
     {
