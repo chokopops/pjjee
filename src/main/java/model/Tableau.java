@@ -136,15 +136,15 @@ public class Tableau {
             stmt.executeUpdate("UPDATE VISITE SET PLANNIF = '"+ plannif +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT, VISITE WHERE '"+id_student+"' = VISITE.id_student AND VISITE.id_student = STUDENT.id_student AND STUDENT.id_tutor = '"+id_tutor+"' )");
             stmt.executeUpdate("UPDATE VISITE SET FAITE = '"+ faite +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT, VISITE WHERE '"+id_student+"' = VISITE.id_student AND VISITE.id_student = STUDENT.id_student AND STUDENT.id_tutor = '"+id_tutor+"' )");
 
-            stmt.executeUpdate("UPDATE STUDENT SET LASTNAME_STUDENT = '"+ LastNameStudent +"' WHERE ID_STUDENT = '"+id_student+"'");
-            stmt.executeUpdate("UPDATE STUDENT SET GROUP_STUDENT = '"+ GroupStudent +"' WHERE ID_STUDENT = '"+id_student+"'");
-            stmt.executeUpdate("UPDATE ENTREPRISE SET NAME_ENTREPRISE = '"+ NomEntreprise +"' WHERE ID_ENTREPRISE = (SELECT ENTREPRISE.id_entreprise FROM ENTREPRISE, STAGE WHERE STAGE.id_student = '"+id_student+"' AND STAGE.id_enterprise = ENTREPRISE.id_entreprise )");
-            stmt.executeUpdate("UPDATE ENTREPRISE SET ADRESSE = '"+ AdresseEntreprise +"' WHERE ID_ENTREPRISE = (SELECT ENTREPRISE.id_entreprise FROM ENTREPRISE, STAGE WHERE STAGE.id_student = '"+id_student+"' AND STAGE.id_enterprise = ENTREPRISE.id_entreprise )");
-            stmt.executeUpdate("UPDATE STAGE SET MDS = '"+ Mds +"' WHERE ID_STUDENT = '"+id_student+"'");
-            stmt.executeUpdate("UPDATE STAGE SET NOTE_TECH = '"+ NoteTech +"' WHERE ID_STUDENT = '"+id_student+"'");
-            stmt.executeUpdate("UPDATE STAGE SET NOTE_COM = '"+ NoteCom +"' WHERE ID_STUDENT = '"+id_student+"'");
-            stmt.executeUpdate("UPDATE STAGE SET DEBUT = '"+ Debut +"' WHERE ID_STUDENT = '"+id_student+"'");
-            stmt.executeUpdate("UPDATE STAGE SET FIN = '"+ Fin +"' WHERE ID_STUDENT = '"+id_student+"'");
+            stmt.executeUpdate("UPDATE STUDENT SET LASTNAME_STUDENT = '"+ LastNameStudent +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"') ");
+            stmt.executeUpdate("UPDATE STUDENT SET GROUP_STUDENT = '"+ GroupStudent +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"')");
+            stmt.executeUpdate("UPDATE ENTREPRISE SET NAME_ENTREPRISE = '"+ NomEntreprise +"' WHERE ID_ENTREPRISE = (SELECT ENTREPRISE.id_entreprise FROM ENTREPRISE, STAGE, STUDENT WHERE STAGE.id_student = '"+id_student+"' AND STAGE.id_enterprise = ENTREPRISE.id_entreprise AND STAGE.id_student = STUDENT.id_student AND STUDENT.id_tutor = '"+id_tutor+"' )");
+            stmt.executeUpdate("UPDATE ENTREPRISE SET ADRESSE = '"+ AdresseEntreprise +"' WHERE ID_ENTREPRISE = (SELECT ENTREPRISE.id_entreprise FROM ENTREPRISE, STAGE, STUDENT WHERE STAGE.id_student = '"+id_student+"' AND STAGE.id_enterprise = ENTREPRISE.id_entreprise AND STAGE.id_student = STUDENT.id_student AND STUDENT.id_tutor = '"+id_tutor+"' )");
+            stmt.executeUpdate("UPDATE STAGE SET MDS = '"+ Mds +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"') ");
+            stmt.executeUpdate("UPDATE STAGE SET NOTE_TECH = '"+ NoteTech +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"')");
+            stmt.executeUpdate("UPDATE STAGE SET NOTE_COM = '"+ NoteCom +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"')");
+            stmt.executeUpdate("UPDATE STAGE SET DEBUT = '"+ Debut +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"')");
+            stmt.executeUpdate("UPDATE STAGE SET FIN = '"+ Fin +"' WHERE ID_STUDENT = (SELECT STUDENT.id_student FROM STUDENT WHERE STUDENT.id_student = '"+id_student+"' AND STUDENT.id_tutor = '"+id_tutor+"')");
 
         }
         catch (Exception e){
