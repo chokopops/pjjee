@@ -5,55 +5,25 @@ body{
     height: 100%;
 }
 
-
 h1{
     color: dodgerblue;
 }
 
-#contenanttableaux{
-    width: 80%;
-    height: 90%;
-    background-color: #fdf1f1;
-}
-
-#tablestagiaire{
-    width: 250px;
-    overflow-x: auto;
-    overflow-y: auto;
-}
-
-#tableentreprise{
-    width: 400px;
-    overflow-x: auto;
-    overflow-y: auto;
-}
-
-#tablestage{
-    width: 600px;
-    overflow-x: auto;
-    overflow-y: auto;
-}
-
-
-#authentification_title{
-    background-color: #378de9;
-}
-
-#efrei2{
-    height: 40px;
-    width: 80%;
-    overflow: hidden;
-}
 #navbar{
     background-color: #1b70ca;
     color: #ffffff;
     height: 60px;
 }
 
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
 #efreinavbar{
-    height: 15%;
+    height: 75%;
     width: 15%;
-    overflow: hidden;
 }
 
 #navbarText{

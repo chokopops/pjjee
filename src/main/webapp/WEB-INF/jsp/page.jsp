@@ -20,19 +20,30 @@
         <link href="//db.onlinewebfonts.com/c/c38f2cc711985becf7550d75271b1175?family=Neo+Sans+Pro" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-            <div class="p-2 mr-auto">
-                <img id="efreinavbar" src="/images/efrei.jpg">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><img id="efreinavbar" src="/images/efrei.jpg"></a>
+                    </li>
+                </ul>
             </div>
-            <div class="p-2">
-                <c:if test="${ !empty sessionScope.idtutor}">
-                    <p>Id Tutor ${ sessionScope.idtutor } !</p>
-                </c:if>
+            <div class="mx-auto order-0">
+                <h3 class="navbar-brand mx-auto">Page du tuteur</h3>
             </div>
-            <div class="p-2">
-                <form name="LogOut" method="post" action="Logout">
-                    <td><input type="submit" class="btn btn-danger" name="detail" value="Log Out"/></td>
-                </form>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <c:if test="${ !empty sessionScope.idtutor}">
+                            <p style="color: white">Id Tutor ${ sessionScope.idtutor } !</p>
+                        </c:if>
+                    </li>
+                    <li class="nav-item">
+                        <form name="LogOut" method="post" action="Logout">
+                            <td><input type="submit" class="btn btn-danger" name="detail" value="Log Out"/></td>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </nav>
         <div class="container-fluid">
