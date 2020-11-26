@@ -37,7 +37,7 @@
                     <li class="nav-item" style="margin-right: 10px;">
                         <!-- display the id of the tutor -->
                         <c:if test="${ !empty sessionScope.idtutor}">
-                            <p style="color: white">Id Tutor ${ sessionScope.idtutor } !</p>
+                            <p style="color: white">${ sessionScope.LastNameTutor } ${ sessionScope.FirstNameTutor }    </p>
                         </c:if>
                     </li>
                     <li class="nav-item">
@@ -130,7 +130,7 @@
                                 <form name="TableFormIndex" size="2" method="post" action="Table">
                                     <input type="hidden" size="2" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
                                 <td><input class="input-group-text" type="text" size="3" name="GroupStudent" value="${aEtudiant.getStudentInfo().getGroup()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="3" name="LastNameStudent" value="${aEtudiant.getStudentInfo().getLastname()}" /></td><!-- String -->
+                                <td><input class="input-group-text" type="text" size="9" name="LastNameStudent" value="${aEtudiant.getStudentInfo().getLastname()}" /></td><!-- String -->
                                 <td>
                                     <label class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="cdc"

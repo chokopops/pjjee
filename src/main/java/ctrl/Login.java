@@ -23,6 +23,8 @@ public class Login extends HttpServlet {
                 Log = true;
                 HttpSession session = request.getSession(); //creation of the session object which will handle every session data
                 session.setAttribute("idtutor", Form.getIdTutor());
+                session.setAttribute("LastNameTutor", Form.getLastName());
+                session.setAttribute("FirstNameTutor", Form.getFirstName());
                 request.setAttribute("Log", Log);
                 response.sendRedirect("/Table");
             }

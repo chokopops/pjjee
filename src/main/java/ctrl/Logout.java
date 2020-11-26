@@ -16,6 +16,8 @@ public class Logout extends HttpServlet {
         //removing the session attribute to allow new session usage
 
         session.removeAttribute("idtutor");
+        session.removeAttribute("LastNameTutor");
+        session.removeAttribute("FirstNameTutor");
         response.sendRedirect("/Login");
     }
 

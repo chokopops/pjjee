@@ -34,7 +34,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" style="margin-right: 10px;">
                         <c:if test="${ !empty sessionScope.idtutor}">
-                            <p style="color: white;">Id Tutor ${ sessionScope.idtutor } !</p>
+                            <p style="color: white;">${ sessionScope.LastNameTutor } ${ sessionScope.FirstNameTutor }    </p>
                         </c:if>
                     </li>
                     <li class="nav-item">
