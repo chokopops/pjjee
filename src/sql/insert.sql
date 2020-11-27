@@ -16,15 +16,15 @@ INSERT INTO PUBLIC.DOC (CDC, FICHE_EVAL, SONDAGE, RAPPORT, SOUTENANCE)
             ('true', 'false', 'false', 'true', 'true');
 
 INSERT INTO PUBLIC.STUDENT (FIRSTNAME_STUDENT, LASTNAME_STUDENT, GROUP_STUDENT, ID_TUTOR, ID_DOC)
-    VALUES  ('Adam', 'Troajour', '2', 1, 1),
-            ('Bill', 'Aterahl', '2', 1, 2),
-            ('Nicolas', 'Cardoso', '3', 1, 3),
-            ('Cedric', 'Merliot', '3', 2, 4),
-            ('Louis', 'Tran', '3', 2, 5),
-            ('Camille', 'Onette', '3', 2, 6),
-            ('Daisy', 'Rable', '3', 2, 7),
-            ('Eddie', 'Scylla', '3', 2, 8),
-            ('Firmin', 'Peutagel', '3', 3, 9);
+    VALUES  ('Adam', 'Troajour', 'y2g1', 1, 1),
+            ('Bill', 'Aterahl', 'y2g1', 1, 2),
+            ('Nicolas', 'Cardoso', 'y3g1', 1, 3),
+            ('Cedric', 'Merliot', 'y3g1', 2, 4),
+            ('Louis', 'Tran', 'y3g2', 2, 5),
+            ('Camille', 'Onette', 'y3g2', 2, 6),
+            ('Daisy', 'Rable', 'y3g2', 2, 7),
+            ('Eddie', 'Scylla', 'y3g2', 2, 8),
+            ('Firmin', 'Peutagel', 'y3g2', 3, 9);
 
 
 INSERT INTO PUBLIC.VISITE (FICHE_VISITE, PLANNIF, FAITE, ID_TUTOR, ID_STUDENT)
