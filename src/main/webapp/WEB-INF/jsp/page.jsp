@@ -105,148 +105,150 @@
                     </div>
                     <hr>
 
-                    <table class="table table-striped" id="studentTable">
+                    <table class="table table-fixed">
                         <h4>Liste des étudiants</h4>
                         <tr>
-                            <td>Groupe</td>
-                            <td>Nom</td>
-                            <td>Cdc</td>
-                            <td>Fiche visite</td>
-                            <td>Fiche eval</td>
-                            <td>Sondage</td>
-                            <td>Rapport</td>
-                            <td>Soutenance</td>
-                            <td>Plannif</td>
-                            <td>Faite</td>
-                            <td>Stage Date debut</td>
-                            <td>Stage Date fin</td>
-                            <td>Entreprise nom</td>
-                            <td>Maitre de stage</td>
-                            <td>Entreprise adresse</td>
-                            <td>Note technique</td>
-                            <td>Notet com</td>
-                            <td>Edit</td>
-                            <td>Details</td>
+                            <th>Groupe</th>
+                            <th>Nom</th>
+                            <th>Cdc</th>
+                            <th>Fiche visite</th>
+                            <th>Fiche eval</th>
+                            <th>Sondage</th>
+                            <th>Rapport</th>
+                            <th>Soutenance</th>
+                            <th>Plannif</th>
+                            <th>Faite</th>
+                            <th>Stage Date debut</th>
+                            <th>Stage Date fin</th>
+                            <th>Entreprise nom</th>
+                            <th>Maitre de stage</th>
+                            <th>Entreprise adresse</th>
+                            <th>Note technique</th>
+                            <th>Notet com</th>
+                            <th>Edit</th>
+                            <th>Details</th>
                         </tr>
                         <!-- for each student who will have the tutor id, they will be displayed in the table -->
                         <c:set var="count" value="0" scope="session" />
                         <c:forEach items="${listEtudiants}" var="aEtudiant">
-                            <tr>
-                                <form name="TableFormIndex" size="2" method="post" action="Table">
-                                    <input type="hidden" size="2" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
-                                <td><input class="input-group-text" type="text" size="3" name="GroupStudent" value="${aEtudiant.getStudentInfo().getGroup()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="9" name="LastNameStudent" value="${aEtudiant.getStudentInfo().getLastname()}" /></td><!-- String -->
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="cdc"
-                                        <c:if test="${aEtudiant.getStudentDoc().isCdc() == true }">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentDoc().isCdc() != true }">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="fiche_visite"
-                                        <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="fiche_eval"
-                                        <c:if test="${aEtudiant.getStudentDoc().isFicheEval() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentDoc().isFicheEval() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="sondage"
-                                        <c:if test="${aEtudiant.getStudentDoc().isSondage() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentDoc().isSondage() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="rapport"
-                                        <c:if test="${aEtudiant.getStudentDoc().isRapport() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentDoc().isRapport() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="soutenance"
-                                        <c:if test="${aEtudiant.getStudentDoc().isSoutenance() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentDoc().isSoutenance() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="plannif"
-                                        <c:if test="${aEtudiant.getStudentVisite().isPlannif() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentVisite().isPlannif() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="faite"
-                                        <c:if test="${aEtudiant.getStudentVisite().isFaite() == true}">
-                                               checked/>
-                                        </c:if>
-                                        <c:if test="${aEtudiant.getStudentVisite().isFaite() != true}">
-                                            />
-                                        </c:if>
-                                        <span class="custom-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td><input class="input-group-text" type="text" size="9" name="Debut" value="${aEtudiant.getStudentStage().getDebut()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="9" name="Fin" value="${aEtudiant.getStudentStage().getFin()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="10" name="NomEntreprise" value="${aEtudiant.getStudentEnterprise().getNom()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="10" name="Mds" value="${aEtudiant.getStudentStage().getMds()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="12" name="AdresseEntreprise" value="${aEtudiant.getStudentEnterprise().getAdresse()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="2" name="NoteTech" value="${aEtudiant.getStudentStage().getNoteTech()}" /></td><!-- String -->
-                                <td><input class="input-group-text" type="text" size="2" name="NoteCom" value="${aEtudiant.getStudentStage().getNoteCom()}" /></td><!-- String -->
-                                <td><input type="submit" size="25" class="btn btn-primary" name="submit" value="Valid Edit"/></td>
-                                    <c:set var="count" value="${count + 1}" scope="session"/>
-                                </form>
-                                <form name="TableFormIndex" method="post" action="Detail">
-                                    <input type="hidden" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
-                                    <td><input type="submit" class="btn btn-primary" name="detail" value="Detail"/></td>
-                                </form>
-                            </tr>
+                            <tbody id="studentTable">
+                                <tr>
+                                    <form name="TableFormIndex" size="2" method="post" action="Table">
+                                        <input type="hidden" size="2" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
+                                        <td><input class="input-group-text" type="text" size="3" name="GroupStudent" value="${aEtudiant.getStudentInfo().getGroup()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="9" name="LastNameStudent" value="${aEtudiant.getStudentInfo().getLastname()}" /></td><!-- String -->
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="cdc"
+                                                <c:if test="${aEtudiant.getStudentDoc().isCdc() == true }">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentDoc().isCdc() != true }">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="fiche_visite"
+                                                <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentVisite().isFicheVisite() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="fiche_eval"
+                                                <c:if test="${aEtudiant.getStudentDoc().isFicheEval() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentDoc().isFicheEval() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="sondage"
+                                                <c:if test="${aEtudiant.getStudentDoc().isSondage() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentDoc().isSondage() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="rapport"
+                                                <c:if test="${aEtudiant.getStudentDoc().isRapport() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentDoc().isRapport() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="soutenance"
+                                                <c:if test="${aEtudiant.getStudentDoc().isSoutenance() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentDoc().isSoutenance() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="plannif"
+                                                <c:if test="${aEtudiant.getStudentVisite().isPlannif() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentVisite().isPlannif() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="faite"
+                                                <c:if test="${aEtudiant.getStudentVisite().isFaite() == true}">
+                                                       checked/>
+                                                </c:if>
+                                                <c:if test="${aEtudiant.getStudentVisite().isFaite() != true}">
+                                                    />
+                                                </c:if>
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                        <td><input class="input-group-text" type="text" size="9" name="Debut" value="${aEtudiant.getStudentStage().getDebut()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="9" name="Fin" value="${aEtudiant.getStudentStage().getFin()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="10" name="NomEntreprise" value="${aEtudiant.getStudentEnterprise().getNom()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="10" name="Mds" value="${aEtudiant.getStudentStage().getMds()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="12" name="AdresseEntreprise" value="${aEtudiant.getStudentEnterprise().getAdresse()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="2" name="NoteTech" value="${aEtudiant.getStudentStage().getNoteTech()}" /></td><!-- String -->
+                                        <td><input class="input-group-text" type="text" size="2" name="NoteCom" value="${aEtudiant.getStudentStage().getNoteCom()}" /></td><!-- String -->
+                                        <td><input type="submit" size="25" class="btn btn-primary" name="submit" value="Valid Edit"/></td>
+                                        <c:set var="count" value="${count + 1}" scope="session"/>
+                                    </form>
+                                    <form name="TableFormIndex" method="post" action="Detail">
+                                        <input type="hidden" name="id_student" value="${aEtudiant.getStudentInfo().getIdStudent()}" />
+                                        <td><input type="submit" class="btn btn-primary" name="detail" value="Detail"/></td>
+                                    </form>
+                                </tr>
+                            </tbody>
                         </c:forEach>
                         </tbody>
                     </table>
