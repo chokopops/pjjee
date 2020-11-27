@@ -35,21 +35,21 @@ public class Tutor
             rs = stmt.executeQuery("SELECT ID_TUTOR, LOGIN_PROF, PWD_PROF, FIRSTNAME_PROF, LASTNAME_PROF FROM TUTOR WHERE LOGIN_PROF='"+login+"'");
             while ( rs.next() ) {
                 if ((rs.getString("PWD_PROF")).equals(pwd)){
-                    resultat = loginSuccess;
+                    resultat = LOGINSUCCESS;
                     idtutor = rs.getInt("ID_TUTOR");
                     firstName = rs.getString("FIRSTNAME_PROF");
                     lastName = rs.getString("LASTNAME_PROF");
                     System.out.println("log et mail good");
                 }
             }
-            if (resultat != loginSuccess){
-                resultat = loginFail;
+            if (resultat != LOGINSUCCESS){
+                resultat = LOGINFAIL;
             }
 
         }
         catch (Exception e){
             System.out.println(e);
-            resultat = loginFail;
+            resultat = LOGINFAIL;
         }
 
 

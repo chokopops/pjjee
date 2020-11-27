@@ -7,9 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.ArrayList;
-
-import static utils.Constant.registerSuccess;
 
 @WebServlet(name = "Login")
 public class Login extends HttpServlet {
@@ -19,7 +16,7 @@ public class Login extends HttpServlet {
             Form.verifAccount(request);
             String log = request.getParameter("loginForm");
             request.setAttribute("log",log);
-            if (Form.getResultat().equals(loginSuccess)){//If login succeed you go to login page
+            if (Form.getResultat().equals(LOGINSUCCESS)){//If login succeed you go to login page
                 Log = true;
                 HttpSession session = request.getSession(); //creation of the session object which will handle every session data
                 session.setAttribute("idtutor", Form.getIdTutor());
