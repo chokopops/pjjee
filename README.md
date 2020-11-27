@@ -1,4 +1,4 @@
-Créer une database avec pour mots de passe adm et login adm qui seront défini dans la class "constant"
-Pour lancer le projet, il faudra lancer les commande sql du fichier "create.sql" pour inserrer les tables. Ensuite vous pourrez executer les commandes du fichier "insert.sql" pour avoir le contenu de votre database.
-Ne pas oublier de mettre dans la Class "constant" le nom de votre database ainsi que ses drivers.
-Vous pouvez lancer votre application après avoir fait tous cela
+Create a database with "adm" password and "adm" login which will be defined in the class "constant".
+To launch the project, you will need to run the sql commands in the "create.sql" file to insert the tables. Then you will need to execute the commands of the file "insert.sql" to get the content of your database.
+Don't forget to put in the "constant" class the name of your database and its drivers.
+You can launch your application after you have done all this.
